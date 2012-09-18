@@ -17,7 +17,7 @@
 (require 'init-appearence)
 (require 'init-behavior)
 (require 'init-elpa)
-
+(require 'init-auto-complete)
 ;;; Mode support
 (require 'init-javascript)
 (require 'init-perl)

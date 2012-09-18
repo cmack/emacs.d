@@ -130,6 +130,7 @@
 ;; (require-package 'unfill)
 ;; (require-package 'vc-darcs)
 ;; (require-package 'whole-line-or-region)
+(require-package 'auto-complete)
 (require-package 'yasnippet)
 
 (provide 'init-elpa)
