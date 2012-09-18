@@ -19,6 +19,8 @@
 (require 'init-elpa)
 (require 'init-ido)
 (require 'init-auto-complete)
+(require 'init-git)
+
 ;;; Mode support
 (require 'init-javascript)
 (require 'init-perl)
