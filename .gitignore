@@ -1,0 +1,8 @@
+/tramp
+/elpa
+/auto-save-list
+*~
+*.elc
+.session
+/ac-comphist.dat
+/custom.el
