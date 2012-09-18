@@ -1,3 +1,5 @@
+(require 'cl)
+
 (setq fill-column 78)
 (auto-fill-mode t)
 (column-number-mode t)
