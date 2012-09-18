@@ -1,3 +1,4 @@
+(require 'package)
 ;;------------------------------------------------------------------------------
 ;; Standard package repositories
 ;;------------------------------------------------------------------------------
@@ -129,5 +130,6 @@
 ;; (require-package 'unfill)
 ;; (require-package 'vc-darcs)
 ;; (require-package 'whole-line-or-region)
+(require-package 'yasnippet)
 
 (provide 'init-elpa)

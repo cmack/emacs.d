@@ -21,9 +21,9 @@
 ;;; Mode support
 (require 'init-javascript)
 (require 'init-perl)
-(require 'init-common-lisp)
+;; (require 'init-common-lisp)
 
-
+(require 'init-yasnippet)
 
 
 (load custom-file)
