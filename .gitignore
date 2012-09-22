@@ -6,3 +6,6 @@
 .session
 /ac-comphist.dat
 /custom.el
+/eshell
+/url
+session.*
