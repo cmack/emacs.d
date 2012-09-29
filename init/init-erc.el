@@ -4,6 +4,6 @@
       erc-port 6667
       erc-server "irc.freenode.net"
       erc-track-exclude-types '("JOIN" "NICK" "PART" "QUIT" "MODE" "333" "353" "324" "329" "332" "477")
-      erc-hide-list '("JOIN" "NICK" "PART" "QUIT")))
+      erc-hide-list '("JOIN" "NICK" "PART" "QUIT"))
 
 (provide 'init-erc)
