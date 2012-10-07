@@ -26,6 +26,7 @@
 (require 'init-perl)
 (require 'init-ruby)
 (require 'init-erc)
+(require 'init-scss)
 ;; (require 'init-common-lisp)
 
 (require 'init-yasnippet)
