@@ -6,6 +6,10 @@
 
 (show-paren-mode 1)
 
+(setq backup-by-copying t)
+(setq backup-directory-alist '((".*" . "~/.emacs.d/backups")))
+(setq auto-save-file-name-transforms '((".*" "~/.emacs.d/autosaves/\\1")))
+
 (setq-default indent-tabs-mode nil)
 (setq indent-tabs-mode nil)
 
@@ -29,6 +33,8 @@
   (electric-indent-mode t)
   (electric-layout-mode t))
 
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'post-forward-angle-brackets)
 
 (setq custom-file "~/.emacs.d/custom.el")
 
