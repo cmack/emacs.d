@@ -12,6 +12,10 @@
                                    cperl-electric-linefeed t
                                    cperl-electric-lbrace-space t)
 
+                             (when (>= emacs-major-version 24)
+                               (setq cperl-electric-parens nil
+                                     cperl-electric-lbrace-space nil))
+
                              (setq cperl-extra-newline-before-brace t)
                              (setq cperl-brace-imaginary-offset 0)
                              (setq cperl-indent-parens-as-block t)
