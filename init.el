@@ -20,7 +20,7 @@
 (require 'init-ido)
 (require 'init-auto-complete)
 (require 'init-git)
-(require 'init-powerline)
+;; (require 'init-powerline)
 ;;; Mode support
 (require 'init-javascript)
 (require 'init-perl)
