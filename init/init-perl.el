@@ -16,7 +16,7 @@
                                (setq cperl-electric-parens nil
                                      cperl-electric-lbrace-space nil))
 
-                             (setq cperl-extra-newline-before-brace t)
+                             (setq cperl-merge-trailing-else nil)
                              (setq cperl-brace-imaginary-offset 0)
                              (setq cperl-indent-parens-as-block t)
                              (setq cperl-indent-wrt-brace t)
