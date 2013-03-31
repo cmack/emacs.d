@@ -15,9 +15,17 @@
 
 (fset 'yes-or-no-p 'y-or-n-p)
 
-;; TODO have graceful browser fallbacks 
-(setq browse-url-generic-program "chromium-browser"
-      browse-url-browser-function 'browse-url-generic)
+;; TODO have graceful browser fallbacks
+(when window-system
+  (when *linux-p*
+    (setq browse-url-generic-program
+          (substring (shell-command-to-string "gconftool-2 -g /desktop/gnome/applications/browser/exec") 0 -1)))
+  (setq browse-url-browser-function (cond (*linux-p* 'browse-url-generic)
+                                          (*mac-p* 'browse-url-default-macosx-browser)
+                                          (*windows-p* 'browse-url-default-windows-browser))))
+
+;; (setq browse-url-generic-program "chromium-browser"
+;;       browse-url-browser-function 'browse-url-generic)
 
 
 ;; UTF-8
