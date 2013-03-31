@@ -1,11 +1,11 @@
-(require 'paredit)
+;;(require 'paredit)
 (require 'slime-autoloads)
 
 ;;some niftiness nicked from Bill Clementson
-(defun bc-slime-connect ()  
-  "Connect to Swank with defaults."
-  (interactive)
-  (slime-connect slime-lisp-host (format "%d" slime-port)))
+;; (defun bc-slime-connect ()
+;;   "Connect to Swank with defaults."
+;;   (interactive)
+;;   (slime-connect slime-lisp-host (format "%d" slime-port)))
 
 (eval-after-load "slime"
   '(progn
@@ -22,13 +22,14 @@
 
      (slime-setup '(slime-fancy slime-asdf slime-banner))
 
-     (define-key slime-repl-mode-map (kbd "C-c ;") 'slime-insert-balanced-comments)
-     (define-key slime-repl-mode-map (kbd "C-c M-;") 'slime-remove-balanced-comments)
-     (define-key slime-mode-map (kbd "C-c ;") 'slime-insert-balanced-comments)
-     (define-key slime-mode-map (kbd "C-c M-;") 'slime-remove-balanced-comments)
-     (define-key slime-mode-map (kbd "RET") 'newline-and-indent)
-     (define-key slime-mode-map (kbd "<return>") 'newline-and-indent)
-     (define-key slime-mode-map (kbd "C-j") 'newline)))
+     ;; (define-key slime-repl-mode-map (kbd "C-c ;") 'slime-insert-balanced-comments)
+     ;; (define-key slime-repl-mode-map (kbd "C-c M-;") 'slime-remove-balanced-comments)
+     ;; (define-key slime-mode-map (kbd "C-c ;") 'slime-insert-balanced-comments)
+     ;; (define-key slime-mode-map (kbd "C-c M-;") 'slime-remove-balanced-comments)
+     ;; (define-key slime-mode-map (kbd "RET") 'newline-and-indent)
+     ;; (define-key slime-mode-map (kbd "<return>") 'newline-and-indent)
+     ;; (define-key slime-mode-map (kbd "C-j") 'newline)
+     ))
 
 (add-hook 'lisp-mode-hook (lambda ()
                             (cond ((not (featurep 'slime))
@@ -39,30 +40,30 @@
 
 ;; LispDoc access from Bill Clementson
 (defun lispdoc ()
-  "Searches lispdoc.com for SYMBOL, which is by default the symbol 
-currently under the curser" 
+  "Searches lispdoc.com for SYMBOL, which is by default the symbol
+currently under the curser"
   (interactive)
   (let* ((word-at-point (word-at-point))
          (symbol-at-point (symbol-at-point))
          (default (symbol-name symbol-at-point))
-         (inp (read-from-minibuffer 
+         (inp (read-from-minibuffer
                (if (or word-at-point symbol-at-point)
                    (concat "Symbol (default " default "): ")
 		    "Symbol (no default): "))))
     (if (and (string= inp "")
 	      (not word-at-point)
-	       (not 
+	       (not
 		   symbol-at-point))
         (message "you didn't enter a symbol!")
-      (let ((search-type (read-from-minibuffer 
+      (let ((search-type (read-from-minibuffer
 			    "full-text (f) or basic (b) search (default b)? ")))
-	(browse-url (concat "http://lispdoc.com?q=" 
+	(browse-url (concat "http://lispdoc.com?q="
 			        (if (string= inp "")
-				    default 
+				    default
 				          inp)
-				    "&search;=" 
+				    "&search;="
 				        (if (string-equal search-type "f")
-					    "full+text+search" 
+					    "full+text+search"
 					          "basic+search")))))))
 ;; Paredit
 (mapc (lambda (mode)
@@ -70,6 +71,5 @@ currently under the curser"
 				    "-mode-hook"))))
 	  (add-hook hook (lambda () (paredit-mode +1)))))
       '(emacs-lisp lisp inferior-lisp))
-
 
 (provide 'init-common-lisp)

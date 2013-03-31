@@ -59,7 +59,7 @@
 ;; (require-package 'eldoc-eval)
 ;; (require-package 'legalese)
 ;; (require-package 'erlang)
-;; (require-package 'slime)
+(require-package 'slime)
 ;; (require-package 'slime-fuzzy)
 ;; (require-package 'slime-repl)
 ;; (require-package 'gist)
