@@ -18,7 +18,7 @@
 	   slime-net-coding-system 'utf-8-unix
 	   slime-startup-animation nil
 	   slime-port 4005
-	   common-lisp-hyperspec-root "/home/charlie/lisp/Hyperspec/")
+	   common-lisp-hyperspec-root "/home/charlie/lisp/HyperSpec/")
 
      (slime-setup '(slime-fancy slime-asdf slime-banner))
 
