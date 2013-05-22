@@ -24,6 +24,7 @@
                              (setq cperl-merge-trailing-else t)
                              (setq indent-tabs-mode t)
                              (setq tab-width 2)
+                             (add-hook 'before-save-hook 'delete-trailing-whitespace)
                              ))
 (mapc
      (lambda (pair)
