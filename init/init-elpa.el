@@ -132,6 +132,6 @@
 ;; (require-package 'whole-line-or-region)
 (require-package 'auto-complete)
 (require-package 'yasnippet)
-(require-package 'powerline)
+;;(require-package 'powerline)
 
 (provide 'init-elpa)
