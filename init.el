@@ -25,10 +25,11 @@
 (require 'init-common-lisp)
 (require 'init-javascript)
 (require 'init-perl)
+(require 'init-php)
 (require 'init-ruby)
 (require 'init-erc)
 (require 'init-scss)
-
+(require 'init-web)
 
 (require 'init-yasnippet)
 
