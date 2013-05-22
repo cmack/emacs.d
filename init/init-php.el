@@ -13,12 +13,8 @@
 ;; (mmm-add-mode-ext-class 'html-mode "\\.php[34]?\\'" 'fancy-html)
 ;; (add-to-list 'auto-mode-alist '("\\.php[34]?\\'" . html-mode))
 
-(add-hook 'html-mode-hook (lambda ()
-                            (setq indent-tabs-mode t
-                                  tab-width 4
-                                  fill-colum 78)))
 
-(add-hook 'php-mode-hook 'flymake-php-load)
+;; (add-hook 'php-mode-hook 'flymake-php-load)
 (add-hook 'php-mode-hook 'my-laravel-coding-style 'append)
 
 (c-add-style
