@@ -46,6 +46,12 @@
 
 (setq custom-file "~/.emacs.d/custom.el")
 
+(defun tabify-buffer ()
+  (interactive)
+  (tabify (point-min) (point-max)))
 
+(defun untabify-buffer ()
+  (interactive)
+  (untabify (point-min) (point-max)))
 
 (provide 'init-behavior)
