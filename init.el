@@ -17,6 +17,7 @@
 (require 'init-appearence)
 (require 'init-behavior)
 (require 'init-elpa)
+(require 'init-dired)
 (require 'init-ido)
 (require 'init-auto-complete)
 (require 'init-git)
