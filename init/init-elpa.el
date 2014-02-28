@@ -133,5 +133,7 @@
 (require-package 'auto-complete)
 (require-package 'yasnippet)
 ;;(require-package 'powerline)
+(require-package 'web-mode)
+(require-package 'emmet-mode)
 
 (provide 'init-elpa)
