@@ -1,3 +1,0 @@
-[submodule "site-lisp/emacs-planet-theme"]
-	path = site-lisp/emacs-planet-theme
-	url = https://github.com/cmack/emacs-planet-theme.git
