@@ -11,7 +11,7 @@
 (require 'emmet-mode)
 
 
-(add-to-list 'auto-mode-alist '("/\\(views\\|html\\|templates\\)/.*\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("/\\([Vv]iews\\|[Hh]tml\\|[Tt]emplates\\)/.*\\.php\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.hbs\\'" . web-mode))
 
 (add-hook 'web-mode-hook
