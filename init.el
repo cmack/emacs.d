@@ -14,9 +14,9 @@
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (setq inhibit-startup-message t)
 
-(require 'init-appearence)
 (require 'init-behavior)
 (require 'init-elpa)
+(require 'init-appearence)
 (require 'init-dired)
 (require 'init-ido)
 (require 'init-auto-complete)

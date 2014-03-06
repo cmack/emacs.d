@@ -31,6 +31,7 @@
 ;; (require-package 'ido-ubiquitous)
 (when (< emacs-major-version 24)
   (require-package 'color-theme))
+(require-package 'planet-theme)
 ;; (require-package 'ace-jump-mode)
 ;; (require-package 'fill-column-indicator)
 ;; (require-package 'mark-multiple)
