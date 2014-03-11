@@ -26,6 +26,7 @@
 (require 'init-common-lisp)
 (require 'init-javascript)
 (require 'init-perl)
+(require 'init-python)
 (require 'init-php)
 (require 'init-ruby)
 (require 'init-erc)

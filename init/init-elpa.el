@@ -136,5 +136,6 @@
 ;;(require-package 'powerline)
 (require-package 'web-mode)
 (require-package 'emmet-mode)
+(require-package 'elpy)
 
 (provide 'init-elpa)
