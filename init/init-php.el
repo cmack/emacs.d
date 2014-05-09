@@ -15,13 +15,16 @@
 
 
 ;; (add-hook 'php-mode-hook 'flymake-php-load)
+
+(setq php-executable "/usr/bin/php")
+
 (add-hook 'php-mode-hook 'my-laravel-coding-style 'append)
 
 (c-add-style
  "laravel"
  '((c-basic-offset . 4)
-   (c-offsets-alist . ((arglist-intro . +)
-                       (arglist-close . -)
+   (c-offsets-alist . ((arglist-intro . '+)
+                       (arglist-close . 0)
                        (inline-open . 0)
                        (substatement-open . 0)
                        (block-open . 0)))))
@@ -30,11 +33,16 @@
   "Makes php-mode use coding styles that are preferable for working
 with Laravel."
   (interactive)
-  (setq indent-tabs-mode t
-        tab-width 4
-        fill-column 78
-        show-trailing-whitespace t)
+  ;; (flymake-mode 1)
+  (php-enable-pear-coding-style)
+  (setq tab-width 4
+        fill-column 119
+        show-trailing-whitespace t
+        indent-tabs-mode nil)
+  (turn-on-auto-fill)
   (add-hook 'before-save-hook 'delete-trailing-whitespace)
-  (c-set-style "laravel"))
+  (c-set-offset 'case-label 4)
+  ;; (c-set-style "laravel")
+  )
 
 (provide 'init-php)

@@ -18,7 +18,9 @@
           (lambda ()
             (setq sgml-basic-offset 4)
             (setq indent-tabs-mode t
-                  tab-width 4)
+                  tab-width 4
+                  web-mode-code-indent-offset 4
+                  web-mode-markup-indent-offset 4)
             (add-hook 'before-save-hook 'delete-trailing-whitespace)
             (emmet-mode 1)))
 
