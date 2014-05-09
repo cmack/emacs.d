@@ -27,15 +27,10 @@
 ;; TODO have graceful browser fallbacks
 (when window-system
   (when *linux-p*
-    (setq browse-url-generic-program
-          (substring (shell-command-to-string "gconftool-2 -g /desktop/gnome/applications/browser/exec") 0 -1)))
+    (setq browse-url-generic-program "/usr/bin/xdg-open"))
   (setq browse-url-browser-function (cond (*linux-p* 'browse-url-generic)
                                           (*mac-p* 'browse-url-default-macosx-browser)
                                           (*windows-p* 'browse-url-default-windows-browser))))
-
-;; (setq browse-url-generic-program "chromium-browser"
-;;       browse-url-browser-function 'browse-url-generic)
-
 
 ;; UTF-8
 (set-keyboard-coding-system 'utf-8)
