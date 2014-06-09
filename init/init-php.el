@@ -43,6 +43,7 @@ with Laravel."
   (add-hook 'before-save-hook 'delete-trailing-whitespace)
   (c-set-offset 'case-label 4)
   ;; (c-set-style "laravel")
+  (subword-mode 1)
   )
 
 (provide 'init-php)

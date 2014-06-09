@@ -22,6 +22,7 @@
                   web-mode-code-indent-offset 4
                   web-mode-markup-indent-offset 4)
             (add-hook 'before-save-hook 'delete-trailing-whitespace)
+            (subword-mode 1)
             (emmet-mode 1)))
 
 (add-hook 'html-mode-hook
@@ -30,6 +31,7 @@
             (setq indent-tabs-mode t
                   tab-width 4)
             (add-hook 'before-save-hook 'delete-trailing-whitespace)
+            (subword-mode 1)
             (emmet-mode 1)))
 
 (provide 'init-web)
