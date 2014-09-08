@@ -15,26 +15,27 @@
 ;; hook AC into completion-at-point
 (defun set-auto-complete-as-completion-at-point-function ()
   (setq completion-at-point-functions '(auto-complete)))
+
 (add-hook 'auto-complete-mode-hook 'set-auto-complete-as-completion-at-point-function)
 
 
 (set-default 'ac-sources
-             '(ac-source-yasnippet
-               ac-source-abbrev
+             '(ac-source-imenu
                ac-source-dictionary
                ac-source-words-in-buffer
                ac-source-words-in-same-mode-buffers
                ac-source-words-in-all-buffer))
 
-(dolist (mode '(magit-log-edit-mode log-edit-mode org-mode text-mode haml-mode
-                                    sass-mode scss-mode yaml-mode csv-mode
-                                    espresso-mode haskell-mode html-mode
-                                    nxml-mode sh-mode smarty-mode clojure-mode
-                                    lisp-mode textile-mode markdown-mode
-                                    tuareg-mode js3-mode css-mode js2-mode
-                                    less-css-mode))
-  
-  
+(dolist (mode '(magit-log-edit-mode
+                log-edit-mode org-mode text-mode haml-mode
+                sass-mode scss-mode yaml-mode csv-mode
+                espresso-mode haskell-mode html-mode
+                nxml-mode sh-mode smarty-mode clojure-mode
+                lisp-mode textile-mode markdown-mode
+                tuareg-mode js3-mode css-mode js2-mode
+                less-css-mode))
+
+
   (add-to-list 'ac-modes mode))
 
 
