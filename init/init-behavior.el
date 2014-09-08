@@ -19,7 +19,11 @@
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 
-(setq-default indent-tabs-mode nil)
+(setq-default indent-tabs-mode nil
+              show-trailing-whitespace t
+              ediff-split-window-function 'split-window-horizontally
+              ediff-window-setup-function 'ediff-setup-windows-plain)
+
 (setq indent-tabs-mode nil)
 
 (fset 'yes-or-no-p 'y-or-n-p)
