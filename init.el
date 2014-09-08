@@ -19,6 +19,7 @@
 (require 'init-behavior)
 (require 'init-elpa)
 (require 'init-appearence)
+(require 'init-editing-utils)
 (require 'init-dired)
 (require 'init-ido)
 (require 'init-auto-complete)
