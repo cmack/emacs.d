@@ -1,0 +1,8 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: private function
+# key: prifun
+# --
+private function ${1:name}(${2:$vars})
+{
+        $0
+}

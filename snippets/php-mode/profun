@@ -1,0 +1,8 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: protected function
+# key: profun
+# --
+protected function ${1:name}(${2:$vars})
+{
+        $0
+}

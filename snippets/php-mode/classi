@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: class ... implements ... { ... }
+# key: class
+# expand-env: ((yas-indent-line 'auto))
+# --
+class ${1:Class}${2: implements ${3:ParentClass}} {${4:
+      public function __construct($5)
+      {
+        $0
+      }}
+}
