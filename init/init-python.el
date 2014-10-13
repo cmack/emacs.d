@@ -1,4 +1,4 @@
-(require 'jedi)
+(require-package 'jedi)
 ;; (require 'ipython)
 
 

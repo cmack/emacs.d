@@ -1,6 +1,6 @@
 ;; Use C-f during file selection to switch to regular find-file
 (require 'ido)
-(require 'ido-vertical-mode)
+(require-package 'ido-vertical-mode)
 
 (ido-mode t)
 (ido-everywhere t)
