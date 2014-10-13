@@ -62,4 +62,9 @@
   (interactive)
   (untabify (point-min) (point-max)))
 
+;;; Show trailing whitespace exceptions
+(dolist (hook '(eww-mode-hook minibuffer-setup-hook))
+  (add-hook hook (lambda ()
+                   (setq show-trailing-whitespace nil))))
+
 (provide 'init-behavior)
