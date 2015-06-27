@@ -121,7 +121,7 @@
 ;; (require-package 'unfill)
 ;; (require-package 'vc-darcs)
 ;; (require-package 'whole-line-or-region)
-(require-package 'auto-complete)
+;; (require-package 'auto-complete)
 (require-package 'yasnippet)
 ;;(require-package 'powerline)
 (require-package 'web-mode)

@@ -23,7 +23,8 @@
 (require 'init-flycheck)
 (require 'init-dired)
 (require 'init-ido)
-(require 'init-auto-complete)
+(require 'init-company)
+;; (require 'init-auto-complete)
 (require 'init-git)
 ;; (require 'init-powerline)
 ;;; Mode support
