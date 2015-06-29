@@ -1,4 +1,3 @@
-(require 'package)
 ;;------------------------------------------------------------------------------
 ;; Standard package repositories
 ;;------------------------------------------------------------------------------
@@ -25,8 +24,6 @@
 ;;------------------------------------------------------------------------------
 ;; Fire up package.el and ensure the following packages are installed.
 ;;------------------------------------------------------------------------------
-
-(package-initialize)
 
 ;; (require-package 'ido-ubiquitous)
 (when (< emacs-major-version 24)
@@ -128,4 +125,5 @@
 (require-package 'emmet-mode)
 (require-package 'elpy)
 (require-package 'restclient)
+
 (provide 'init-elpa)
