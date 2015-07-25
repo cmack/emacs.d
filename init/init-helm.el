@@ -22,7 +22,7 @@
     (global-set-key (kbd "C-h b") 'helm-descbinds)
     (global-set-key (kbd "C-h w") 'helm-descbinds)
     (global-set-key (kbd "C-x b") 'helm-buffers-list)
-    (global-set-key (kbd "C-x f") 'helm-find-files)
+    (global-set-key (kbd "C-x C-f") 'helm-find-files)
     (global-set-key (kbd "C-x C-b") 'helm-buffers-list)
     (global-set-key (kbd "M-x") 'helm-M-x)))
 
