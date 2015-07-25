@@ -89,7 +89,7 @@
 ;; (require-package 'diminish)
 ;; (require-package 'autopair)
 ;; (require-package 'js-comint)
-(require-package 'php-mode)
+;; (require-package 'php-mode)
 ;; (require-package 'smarty-mode)
 ;; (require-package 'scratch)
 ;; (require-package 'mic-paren)
