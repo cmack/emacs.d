@@ -132,6 +132,6 @@
 ;; (require-package 'web-mode)
 ;; (require-package 'emmet-mode)
 (require-package 'elpy)
-(require-package 'restclient)
+;; (require-package 'restclient)
 
 (provide 'init-elpa)
