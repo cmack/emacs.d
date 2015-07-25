@@ -45,7 +45,7 @@
 ;; (require-package 'gnuplot)
 ;; (require-package 'haskell-mode)
 ;; (require-package 'tuareg)
-(require-package 'magit)
+;; (require-package 'magit)
 ;; (require-package 'git-blame)
 ;; (require-package 'flymake-cursor)
 ;; (require-package 'csv-mode)
