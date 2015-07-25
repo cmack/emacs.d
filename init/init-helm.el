@@ -1,29 +1,33 @@
-(require-package 'helm)
-(require 'helm-config)
-(require-package 'helm-descbinds)
-
-(setq helm-candidate-number-limit 100)
-;; From https://gist.github.com/antifuchs/9238468
-(setq helm-idle-delay 0.0 ; update fast sources immediately (doesn't).
-      helm-input-idle-delay 0.01  ; this actually updates things
+(use-package helm
+  :ensure t
+  :diminish helm-mode
+  :init
+  (progn
+    (require 'helm-config)
+    (use-package helm-descbinds :ensure t)
+    (setq helm-candidate-number-limit 100)
+    ;; From https://gist.github.com/antifuchs/9238468
+    (setq helm-idle-delay 0.0 ; update fast sources immediately (doesn't).
+          helm-input-idle-delay 0.01  ; this actually updates things
                                         ; reeeelatively quickly.
-      helm-quick-update t
-      ;; helm-M-x-requires-pattern nil
-      helm-ff-skip-boring-files t
-      helm-buffers-fuzzy-matching t
-      helm-recentf-fuzzy-match t)
-
-(helm-mode 1)
-
-(eval-after-load 'helm-mode
-  (lambda ()
-    (global-set-key (kbd "C-c h") 'helm-mini)
-    (global-set-key (kbd "C-h a") 'helm-apropos-fuzzy)
-    (global-set-key (kbd "C-h b") 'helm-descbinds)
-    (global-set-key (kbd "C-h w") 'helm-descbinds)
-    (global-set-key (kbd "C-x b") 'helm-buffers-list)
-    (global-set-key (kbd "C-x C-f") 'helm-find-files)
-    (global-set-key (kbd "C-x C-b") 'helm-buffers-list)
-    (global-set-key (kbd "M-x") 'helm-M-x)))
+          helm-yas-display-key-on-candidate t
+          helm-quick-update t
+          helm-M-x-requires-pattern nil
+          helm-ff-skip-boring-files t)
+    (helm-mode))
+  :bind  (("C-c h" . helm-mini)
+          ("C-h a" . helm-apropos)
+          ("C-h b" . helm-descbinds)
+          ("C-h w" . helm-descbinds)
+          ("C-x b" . helm-buffers-list)
+          ("C-x C-b" . helm-buffers-list)
+          ("C-x C-f" . helm-find-files)
+          ("C-x c o" . helm-occur)
+          ;; ("C-x c s" . helm-swoop)
+          ;; ("C-x c y" . helm-yas-complete)
+          ;; ("C-x c Y" . helm-yas-create-snippet-on-region)
+          ("C-x c SPC" . helm-all-mark-rings)
+          ("M-y" . helm-show-kill-ring)
+          ("M-x" . helm-M-x)))
 
 (provide 'init-helm)
