@@ -25,6 +25,14 @@
 ;; Fire up package.el and ensure the following packages are installed.
 ;;------------------------------------------------------------------------------
 
+(require-package 'use-package)
+(eval-when-compile
+  (require 'use-package))
+(require 'bind-key)
+(use-package diminish :ensure t)
+
+
+
 ;; (require-package 'ido-ubiquitous)
 (when (< emacs-major-version 24)
   (require-package 'color-theme))
