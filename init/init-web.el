@@ -1,5 +1,10 @@
 (use-package haml-mode :ensure t :defer t)
-(use-package scss-mode :ensure t :defer t)
+
+(use-package scss-mode
+  :ensure t :defer t
+  :config
+  (setq scss-compile-at-save nil))
+
 (use-package sass-mode :ensure t :defer t)
 (use-package markdown-mode :ensure t :defer t)
 
