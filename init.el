@@ -30,6 +30,8 @@
 (require 'init-flycheck)
 (require 'init-dired)
 (require 'init-helm)
+(require 'init-projectile)
+(require 'init-input)
 ;; (require 'init-ido)
 (require 'init-company)
 ;; (require 'init-auto-complete)
