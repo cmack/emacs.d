@@ -9,7 +9,7 @@
   :config
   (progn
     (setq php-executable "/usr/bin/php")
-    (setq-default php-mode-coding-style 'PSR-2)
+    (setq php-mode-coding-style 'psr2)
     ;; (php-enable-psr2-coding-style)
     (flycheck-mode 1)
 
@@ -20,9 +20,6 @@
     ;; (c-set-offset 'case-label 4)
     (subword-mode 1)
 
-    (projectile-mode 1)
-    (setq projectile-completion-system 'default)
-    (setq projectile-enable-caching t)
     (setq projectile-tags-command
           (s-join " "
                   (list "ctags -Re"
