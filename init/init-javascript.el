@@ -23,10 +23,8 @@
     (setq tab-width 2)
     (setq coffee-tab-width 2)
     (setq indent-tabs-mode t)
-    (setq show-trailing-whitespace t)
     (add-hook 'before-save-hook
               (lambda ()
-                (delete-trailing-whitespace)
                 ;; This is a sad hack. coffee-mode indents strictly
                 ;; by spaces and I don't have time to patch.
                 ;; I need tabs for work standards.

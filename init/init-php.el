@@ -15,10 +15,8 @@
 
     (setq tab-width 4
           fill-column 119
-          show-trailing-whitespace t
           indent-tabs-mode nil)
     (turn-on-auto-fill)
-    (add-hook 'before-save-hook 'delete-trailing-whitespace)
     ;; (c-set-offset 'case-label 4)
     (subword-mode 1)
 

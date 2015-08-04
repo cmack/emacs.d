@@ -20,9 +20,8 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 
 (setq-default indent-tabs-mode nil
-              show-trailing-whitespace t
-              ediff-split-window-function 'split-window-horizontally
-              ediff-window-setup-function 'ediff-setup-windows-plain)
+      ediff-split-window-function 'split-window-horizontally
+      ediff-window-setup-function 'ediff-setup-windows-plain)
 
 (setq indent-tabs-mode nil)
 
@@ -61,6 +60,10 @@
 (defun untabify-buffer ()
   (interactive)
   (untabify (point-min) (point-max)))
+
+(add-hook 'prog-mode-hook (lambda ()
+                            (setq show-trailing-whitespace t)
+                            (add-hook 'before-save-hook 'whitespace-cleanup)))
 
 ;;; Show trailing whitespace exceptions
 (dolist (hook '(eww-mode-hook minibuffer-setup-hook buffer-menu-mode-hook))
