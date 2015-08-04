@@ -1,20 +1,23 @@
-(use-package json-mode :defer t :ensure t)
+(use-package json-mode
+  :defer t
+  :ensure t)
 
 (use-package js2-mode
   :ensure t
   :defer t
-  :mode ("\\.js$")
-  :config (progn
-            (electric-indent-mode -1)
-            (setq js2-basic-offset 2)
-            (setq js2-bounce-indent-p t)
-            (setq js2-consistent-level-indent-inner-bracket-p t)
-            (setq js2-pretty-multiline-decl-indentation-p t)))
+  :mode "\\.js$"
+  :config
+  (progn
+    (electric-indent-mode -1)
+    (setq js2-basic-offset 2)
+    (setq js2-bounce-indent-p t)
+    (setq js2-consistent-level-indent-inner-bracket-p t)
+    (setq js2-pretty-multiline-decl-indentation-p t)))
 
 (use-package coffee-mode
   :ensure t
   :defer t
-  :mode ("\\.em$")
+  :mode "\\.em$"
   :config
   (progn
     (setq tab-width 2)
