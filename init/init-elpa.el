@@ -74,7 +74,7 @@
 ;; (require-package 'elein)
 ;; (require-package 'durendal)
 ;; (require-package 'markdown-mode)
-(require-package 'smex)
+;; (require-package 'smex)
 ;; (require-package 'dired+)
 (require-package 'rainbow-mode)
 ;; (require-package 'maxframe)
