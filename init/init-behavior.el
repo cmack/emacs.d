@@ -31,9 +31,10 @@
 (when window-system
   (when *linux-p*
     (setq browse-url-generic-program "/usr/bin/xdg-open"))
-  (setq browse-url-browser-function (cond (*linux-p* 'browse-url-generic)
-                                          (*mac-p* 'browse-url-default-macosx-browser)
-                                          (*windows-p* 'browse-url-default-windows-browser))))
+  (setq browse-url-browser-function
+        (cond (*linux-p* 'browse-url-generic)
+              (*mac-p* 'browse-url-default-macosx-browser)
+              (*windows-p* 'browse-url-default-windows-browser))))
 
 ;; UTF-8
 (set-keyboard-coding-system 'utf-8)
@@ -54,10 +55,12 @@
 (setq custom-file "~/.emacs.d/custom.el")
 
 (defun tabify-buffer ()
+  "TABIFY the whole buffer."
   (interactive)
   (tabify (point-min) (point-max)))
 
 (defun untabify-buffer ()
+  "UNTABIFY the whole buffer."
   (interactive)
   (untabify (point-min) (point-max)))
 
