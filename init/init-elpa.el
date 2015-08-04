@@ -75,7 +75,7 @@
 ;; (require-package 'durendal)
 ;; (require-package 'markdown-mode)
 (require-package 'smex)
-(require-package 'dired+)
+;; (require-package 'dired+)
 (require-package 'rainbow-mode)
 ;; (require-package 'maxframe)
 (when (< emacs-major-version 24)
