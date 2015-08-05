@@ -3,6 +3,8 @@
 /auto-save-list
 *~
 *.elc
+\#*\#
+.\#*
 .session
 /ac-comphist.dat
 /custom.el
@@ -10,3 +12,8 @@
 /url
 session.*
 /geben
+places
+recentf
+/request
+projectile.cache
+projectile-bookmarks*
