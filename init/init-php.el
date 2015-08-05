@@ -1,10 +1,15 @@
 (use-package php-mode
   :ensure t
   :defer t
+  :bind ("C--" . cmack/php-quick-arrow)
   :init
-  (progn
-    (use-package php-extras :ensure t)
-    (use-package s :ensure t))
+  (use-package php-extras :ensure t)
+  (use-package s :ensure t)
+
+  (defun cmack/php-quick-arrow ()
+    "Inserts -> at point"
+    (interactive)
+    (insert "->"))
 
   :config
   (progn
