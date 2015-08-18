@@ -31,7 +31,11 @@
 (require 'bind-key)
 (use-package diminish :ensure t)
 
-
+(use-package exec-path-from-shell
+  :if *mac-p*
+  :ensure t
+  :config
+  (exec-path-from-shell-initialize))
 
 ;; (require-package 'ido-ubiquitous)
 (when (< emacs-major-version 24)
