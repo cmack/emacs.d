@@ -74,5 +74,7 @@
   (add-hook hook (lambda ()
                    (setq show-trailing-whitespace nil))))
 
+(bind-key "M-SPC" #'cycle-spacing)
+
 (provide 'init-behavior)
 ;;; init-behavior.el ends here

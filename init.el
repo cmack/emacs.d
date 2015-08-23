@@ -23,8 +23,8 @@
 
 (setq inhibit-startup-message t)
 
-(require 'init-behavior)
 (require 'init-elpa)
+(require 'init-behavior)
 (require 'init-appearence)
 (require 'init-editing-utils)
 (require 'init-flycheck)
