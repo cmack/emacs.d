@@ -66,6 +66,7 @@
 
 (add-hook 'prog-mode-hook (lambda ()
                             (setq show-trailing-whitespace t)
+                            (subword-mode 1)
                             (add-hook 'before-save-hook 'whitespace-cleanup)))
 
 ;;; Show trailing whitespace exceptions
