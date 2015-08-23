@@ -7,12 +7,18 @@
   :defer t
   :mode "\\.js$"
   :config
-  (progn
-    (electric-indent-mode -1)
-    (setq js2-basic-offset 2)
-    (setq js2-bounce-indent-p t)
-    (setq js2-consistent-level-indent-inner-bracket-p t)
-    (setq js2-pretty-multiline-decl-indentation-p t)))
+  (use-package js2-refactor
+    :ensure t
+    :commands js2-refactor-mode
+    :config
+    (js2r-add-keybindings-with-prefix "C-c C-r"))
+
+  (electric-indent-mode -1)
+  (setq js2-basic-offset 2)
+  (setq js2-bounce-indent-p t)
+  (setq js2-consistent-level-indent-inner-bracket-p t)
+  (setq js2-pretty-multiline-decl-indentation-p t)
+  (add-hook 'js2-mode-hook #'js2-refactor-mode))
 
 (use-package coffee-mode
   :ensure t
