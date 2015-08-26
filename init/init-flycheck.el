@@ -1,6 +1,8 @@
 (use-package flycheck
   :ensure t
+  :defer 5
   :config
-  (add-hook 'after-init-hook 'global-flycheck-mode))
+  (global-flycheck-mode 1)
+  :diminish flycheck-mode)
 
 (provide 'init-flycheck)
