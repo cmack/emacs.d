@@ -10,6 +10,10 @@
 (use-package sass-mode :ensure t :defer t)
 (use-package markdown-mode :ensure t :defer t)
 
+(use-package emmet-mode
+  :ensure t
+  :commands emmet-mode)
+
 (use-package web-mode
   :ensure t
   :defer t
@@ -18,7 +22,6 @@
          "/\\([Vv]iews\\|[Hh]tml\\|[Tt]emplates\\)/.*\\.php\\'")
   :config
   (progn
-    (use-package emmet-mode :ensure t)
     (setq sgml-basic-offset 4)
     (setq indent-tabs-mode t
           tab-width 4
