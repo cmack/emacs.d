@@ -1,10 +1,16 @@
 (use-package paredit
   :ensure t
-  :defer t)
+  :defer t
+  :init
+  (mapc (lambda (mode)
+        (let ((hook (intern (concat (symbol-name mode)
+                                    "-mode-hook"))))
+          (add-hook hook (lambda () (paredit-mode +1)))))
+      '(emacs-lisp lisp inferior-lisp)))
 
 (use-package slime
   :ensure t
-  :defer t
+  :commands slime
   :config
   (progn
     (require 'slime-autoloads)
@@ -69,11 +75,5 @@ currently under the curser"
                                         (if (string-equal search-type "f")
                                             "full+text+search"
                                                   "basic+search")))))))
-;; Paredit
-(mapc (lambda (mode)
-        (let ((hook (intern (concat (symbol-name mode)
-                                    "-mode-hook"))))
-          (add-hook hook (lambda () (paredit-mode +1)))))
-      '(emacs-lisp lisp inferior-lisp))
 
 (provide 'init-common-lisp)
