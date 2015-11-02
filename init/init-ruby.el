@@ -1,10 +1,11 @@
 (use-package ruby-mode
   :ensure t
   :defer t
-  :init (use-package robe :ensure t)
-  :config (progn
-             (robe-mode)
-             (eldoc-mode)
-             (add-hook 'before-save-hook 'whitespace-cleanup)))
+  :config
+  (use-package robe
+    :ensure t
+    :commands robe-mode)
+  (robe-mode)
+  (eldoc-mode))
 
 (provide 'init-ruby)
