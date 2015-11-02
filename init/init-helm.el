@@ -1,7 +1,8 @@
 (use-package helm
   :ensure t
   :diminish helm-mode
-  :init
+  :commands helm-mode
+  :config
   (progn
     (require 'helm-config)
     (use-package helm-descbinds :ensure t)
