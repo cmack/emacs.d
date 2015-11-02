@@ -39,7 +39,8 @@
 
 ;; (require-package 'ido-ubiquitous)
 (when (< emacs-major-version 24)
-  (require-package 'color-theme))
+  (use-package color-theme))
+
 (use-package planet-theme :ensure t)
 ;; (require-package 'ace-jump-mode)
 ;; (require-package 'fill-column-indicator)
@@ -80,10 +81,10 @@
 ;; (require-package 'markdown-mode)
 ;; (require-package 'smex)
 ;; (require-package 'dired+)
-(require-package 'rainbow-mode)
+(use-package rainbow-mode :ensure t)
 ;; (require-package 'maxframe)
 (when (< emacs-major-version 24)
-  (require-package 'org))
+  (use-package org :ensure t))
 ;; (require-package 'org-fstree)
 ;; (require-package 'htmlize)
 ;; (require-package 'clojure-mode)
@@ -135,7 +136,7 @@
 ;;(require-package 'powerline)
 ;; (require-package 'web-mode)
 ;; (require-package 'emmet-mode)
-(require-package 'elpy)
+;; (require-package 'elpy)
 ;; (require-package 'restclient)
 
 (provide 'init-elpa)
