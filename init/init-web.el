@@ -4,18 +4,18 @@
 
 (use-package scss-mode
   :ensure t
-  :mode ("\\.scss\\'")
+  :mode "\\.scss\\'"
   :config
   (setq scss-compile-at-save nil))
 
 (use-package sass-mode
   :disabled t
   :ensure t
-  :mode ("\\.scss\\'"))
+  :mode "\\.scss\\'")
 
 (use-package markdown-mode
   :ensure t
-  :mode ("\\.md\\'"))
+  :mode "\\.md\\'")
 
 (use-package emmet-mode
   :ensure t
