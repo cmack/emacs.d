@@ -48,6 +48,7 @@
 (require 'init-web)
 
 (require 'init-yasnippet)
+(require 'init-tex)
 
 
 (load custom-file)
