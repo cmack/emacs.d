@@ -80,5 +80,11 @@
 
 (bind-key "M-SPC" #'cycle-spacing)
 
+(use-package aggressive-indent
+  :ensure t
+  :defer 5
+  :config
+  (add-hook 'prog-mode-hook #'aggressive-indent-mode))
+
 (provide 'init-behavior)
 ;;; init-behavior.el ends here
