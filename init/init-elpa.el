@@ -34,6 +34,7 @@
 (use-package exec-path-from-shell
   :if *mac-p*
   :ensure t
+  :defer 5
   :config
   (exec-path-from-shell-initialize))
 
