@@ -78,7 +78,7 @@
 ;; (require-package 'markdown-mode)
 ;; (require-package 'smex)
 ;; (require-package 'dired+)
-(use-package rainbow-mode :ensure t)
+(use-package rainbow-mode :ensure t :defer 4)
 ;; (require-package 'maxframe)
 (when (< emacs-major-version 24)
   (use-package org :ensure t))
