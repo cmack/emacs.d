@@ -39,10 +39,6 @@
   (exec-path-from-shell-initialize))
 
 ;; (require-package 'ido-ubiquitous)
-(when (< emacs-major-version 24)
-  (use-package color-theme))
-
-(use-package planet-theme :ensure t)
 ;; (require-package 'ace-jump-mode)
 ;; (require-package 'fill-column-indicator)
 ;; (require-package 'expand-region)

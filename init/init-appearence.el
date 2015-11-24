@@ -10,8 +10,15 @@
 (when *windows-p*
   (add-to-list 'default-frame-alist '(font . "-unknown-Inconsolata-normal-normal-normal-*-14-*-*-*-m-0-iso10646-1" )))
 
-(when (and window-system (>= emacs-major-version 24))
-  (load-theme 'planet t))
 
+
+(when (< emacs-major-version 24)
+  (use-package color-theme))
+
+(use-package planet-theme
+  :ensure t
+  :config
+  (when (and window-system (>= emacs-major-version 24))
+    (load-theme 'planet t)))
 
 (provide 'init-appearence)
