@@ -39,6 +39,7 @@
 ;; (require 'init-powerline)
 ;;; Mode support
 (require 'init-common-lisp)
+(require 'init-clojure)
 (require 'init-javascript)
 (require 'init-perl)
 (require 'init-python)
