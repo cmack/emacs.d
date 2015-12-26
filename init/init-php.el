@@ -3,12 +3,14 @@
   :commands ggtags-mode
   :diminish ggtags-mode)
 
+(use-package php-extras
+  :ensure t
+  :commands php-mode)
+
 (use-package php-mode
   :ensure t
   :bind ("C--" . cmack/php-quick-arrow)
   :config
-  (use-package php-extras :defer t)
-
   (defun cmack/php-quick-arrow ()
     "Inserts -> at point"
     (interactive)
