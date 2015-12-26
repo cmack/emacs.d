@@ -23,7 +23,12 @@
     (turn-on-auto-fill)
     (electric-indent-mode)
     (electric-pair-mode)
-    (electric-layout-mode))
+    (electric-layout-mode)
+
+    ;; Experiment with highlighting keys in assoc. arrays
+    (font-lock-add-keywords
+     'php-mode
+     '(("\\s\"\\([^\s;]+\\)\\s\"\\s-+=>\\s-+" 1 'font-lock-variable-name-face t))))
 
   (setq php-executable "/usr/bin/php")
   (setq php-mode-coding-style 'psr2)
