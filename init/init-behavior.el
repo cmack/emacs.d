@@ -86,5 +86,9 @@
   :config
   (add-hook 'prog-mode-hook #'aggressive-indent-mode))
 
+(use-package swiper
+  :ensure t
+  :bind ("C-s" . swiper))
+
 (provide 'init-behavior)
 ;;; init-behavior.el ends here
