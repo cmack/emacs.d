@@ -50,6 +50,6 @@
 
 (require 'init-yasnippet)
 (require 'init-tex)
-
+(require 'init-sql)
 
 (load custom-file)
