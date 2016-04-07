@@ -36,12 +36,16 @@
         tab-width 4
         web-mode-code-indent-offset 2
         web-mode-css-indent-offset 2
-        web-mode-markup-indent-offset 4)
+        web-mode-markup-indent-offset 2
+        web-mode-attr-indent-offset 2)
 
   (setq web-mode-ac-sources-list
         '(("php" . (ac-source-yasnippet))
           ("html" . (ac-source-emmet-html-aliases ac-source-emmet-html-snippets))
           ("css" . (ac-source-css-property ac-source-emmet-css-snippets))))
+
+  (setq web-mode-content-types-alist
+        '(("jsx" . "/\\(container\\|component\\)[s]?/.*\\.js[x]?\\'")))
 
   (subword-mode)
   (emmet-mode)
