@@ -7,10 +7,21 @@
   :ensure t
   :commands php-mode)
 
+(use-package phpcbf
+  :ensure t
+  :commands php-mode
+  :config
+  (setq phpcbf-standard "PSR2"))
+
+(use-package phpunit
+  :ensure t
+  :commands php-mode)
+
 (use-package php-mode
   :ensure t
   :bind ("C--" . cmack/php-quick-arrow)
   :config
+
   (defun cmack/php-quick-arrow ()
     "Inserts -> at point"
     (interactive)
@@ -20,10 +31,14 @@
     (emmet-mode 1)
     (flycheck-mode 1)
     (ggtags-mode 1)
+    (company-mode 1)
+    (eldoc-mode 1)
     (turn-on-auto-fill)
     (electric-indent-mode)
     (electric-pair-mode)
     (electric-layout-mode)
+
+    (setq flycheck-phpcs-standard "PSR2")
 
     ;; Experiment with highlighting keys in assoc. arrays
     (font-lock-add-keywords
