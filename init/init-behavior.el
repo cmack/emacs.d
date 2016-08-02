@@ -1,6 +1,6 @@
 (require 'cl)
 
-(setq fill-column 78)
+(setq-default fill-column 78)
 (auto-fill-mode 1)
 (column-number-mode t)
 
@@ -23,9 +23,14 @@
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 
-(setq-default indent-tabs-mode nil
-      ediff-split-window-function 'split-window-horizontally
-      ediff-window-setup-function 'ediff-setup-windows-plain)
+(setq-default indent-tabs-mode nil)
+
+(use-package ediff
+  :defer t
+  :config
+  (aggressive-indent-mode -1)
+  (setq ediff-split-window-function 'split-window-horizontally
+        ediff-window-setup-function 'ediff-setup-windows-plain))
 
 (setq indent-tabs-mode nil)
 
