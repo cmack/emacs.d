@@ -51,5 +51,6 @@
 (require 'init-yasnippet)
 (require 'init-tex)
 (require 'init-sql)
+(require 'init-org)
 
 (load custom-file)
