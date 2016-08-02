@@ -31,13 +31,15 @@
          "\\.jsx\\'"
          "/\\([Vv]iews\\|[Hh]tml\\|[Tt]emplates\\)/.*\\.php\\'")
   :config
-  (setq sgml-basic-offset 4)
-  (setq indent-tabs-mode t
-        tab-width 4
-        web-mode-code-indent-offset 2
+  (setq sgml-basic-offset 2)
+  (setq web-mode-code-indent-offset 2
         web-mode-css-indent-offset 2
         web-mode-markup-indent-offset 2
         web-mode-attr-indent-offset 2)
+
+  (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
+  (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
+  (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil))
 
   (setq web-mode-ac-sources-list
         '(("php" . (ac-source-yasnippet))
