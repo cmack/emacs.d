@@ -1,7 +1,9 @@
 (use-package ggtags
   :ensure t
   :commands ggtags-mode
-  :diminish ggtags-mode)
+  :diminish ggtags-mode
+  :config
+  (setq ggtags-completing-read-function nil))
 
 (use-package php-extras
   :ensure t
@@ -30,7 +32,8 @@
   (defun cmack/php-mode-hook ()
     (emmet-mode 1)
     (flycheck-mode 1)
-    (ggtags-mode 1)
+    ;; (ggtags-mode 1)
+    (helm-gtags-mode 1)
     (company-mode 1)
     (eldoc-mode 1)
     (turn-on-auto-fill)

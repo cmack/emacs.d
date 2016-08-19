@@ -32,4 +32,11 @@
             ("M-y" . helm-show-kill-ring)
             ("M-x" . helm-M-x))))
 
+(use-package helm-gtags
+  :ensure t
+  :commands helm-gtags-mode
+  :bind (("M-." . helm-gtags-dwim)
+         ("M-," . helm-gtags-pop-stack)
+         ("M-r" . helm-gtags-find-rtag)))
+
 (provide 'init-helm)
