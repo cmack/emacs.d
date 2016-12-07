@@ -84,7 +84,7 @@
   (add-hook hook (lambda ()
                    (setq show-trailing-whitespace nil))))
 
-(bind-key "M-SPC" #'cycle-spacing)
+(add-hook 'after-init-hook (lambda () (bind-key "M-SPC" #'cycle-spacing)))
 
 (use-package aggressive-indent
   :ensure t
