@@ -1,3 +1,7 @@
+(use-package helm-ag
+  :ensure t
+  :after (helm helm-projectile))
+
 (use-package helm-config
   :defer 0.1
   :config
