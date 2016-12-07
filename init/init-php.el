@@ -36,6 +36,12 @@
   :ensure t
   :commands php-mode)
 
+(use-package company-php
+  :ensure t
+  :after php-mode
+  :config
+  (add-to-list 'company-backends 'company-ac-php-backend))
+
 (use-package php-mode
   :ensure t
   :bind ("C--" . cmack/php-quick-arrow)
