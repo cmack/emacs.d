@@ -36,7 +36,8 @@
   (setq web-mode-code-indent-offset 2
         web-mode-css-indent-offset 2
         web-mode-markup-indent-offset 2
-        web-mode-attr-indent-offset 2)
+        web-mode-attr-indent-offset 2
+        web-mode-enable-current-element-highlight t)
 
   (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
   (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
