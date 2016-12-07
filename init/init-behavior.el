@@ -76,7 +76,8 @@
 (add-hook 'prog-mode-hook (lambda ()
                             (setq show-trailing-whitespace t)
                             (subword-mode 1)
-                            (add-hook 'before-save-hook 'whitespace-cleanup)))
+                            (add-hook 'before-save-hook 'whitespace-cleanup)
+                            (flyspell-prog-mode)))
 
 ;;; Show trailing whitespace exceptions
 (dolist (hook '(eww-mode-hook minibuffer-setup-hook buffer-menu-mode-hook))
