@@ -6,10 +6,11 @@
 
 (use-package projectile
   :ensure t
-  :commands projectile-global-mode
+  :commands projectile-mode
   :bind-keymap ("C-c p" . projectile-command-map)
+  :init
+  (add-hook 'prog-mode-hook #'projectile-mode)
   :config
-  (projectile-global-mode)
   (helm-projectile-on)
   (setq projectile-completion-system 'helm))
 
