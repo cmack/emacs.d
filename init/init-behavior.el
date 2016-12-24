@@ -96,5 +96,19 @@
   :ensure t
   :bind ("C-s" . swiper))
 
+(use-package avy
+  :ensure t
+  :bind ("C-:" . avy-goto-char-timer))
+
+(use-package flyspell
+  :commands (flyspell-prog-mode flyspell-mode)
+  :config
+  (setq ispell-command-name "aspell")
+  (setq ispell-extra-args '("--sug-mode=ultra" "--lang=en_US")))
+
+(use-package string-inflection
+  :ensure t
+  :bind ("C-c C-u" . string-inflection-all-cycle))
+
 (provide 'init-behavior)
 ;;; init-behavior.el ends here
