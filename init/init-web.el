@@ -17,6 +17,10 @@
   :ensure t
   :mode "\\.md\\'")
 
+(use-package yaml-mode
+  :ensure t
+  :mode "\\.yaml\\'")
+
 (use-package emmet-mode
   :ensure t
   :commands emmet-mode
