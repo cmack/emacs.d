@@ -44,13 +44,13 @@
 
 (use-package php-mode
   :ensure t
-  :bind ("C--" . cmack/php-quick-arrow)
+  :bind (("C--" . cmack/php-quick-arrow))
   :config
 
-  (defun cmack/php-quick-arrow ()
+  (defun cmack/php-quick-arrow (arg)
     "Inserts -> at point"
-    (interactive)
-    (insert "->"))
+    (interactive "P")
+    (insert (if arg "=>" "->")))
 
   (defun cmack/php-mode-hook ()
     (emmet-mode +1)
