@@ -75,7 +75,7 @@
      '(("\\s\"\\([^\s;]+\\)\\s\"\\s-+=>\\s-+" 1 'font-lock-variable-name-face t)
        ("->\\(\\w+\\)(" 1 'font-lock-function-name-face ))))
 
-  (setq php-executable "/usr/bin/php")
+  ;; (setq php-executable "/usr/bin/php")
   (setq php-mode-coding-style 'psr2)
   (setq tab-width 4
         fill-column 119
