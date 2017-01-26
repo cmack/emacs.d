@@ -4,6 +4,10 @@
   :config
   (add-hook 'clojure-mode-hook 'paredit-mode))
 
+(use-package clojure-mode-extra-font-locking
+  :ensure t
+  :after clojure-mode)
+
 (use-package cider
   :ensure t
   :commands cider-mode
@@ -17,5 +21,9 @@
   :commands clojure-mode
   :config
   (flycheck-clojure-setup))
+
+(use-package clojurescript-mode
+  :ensure t
+  :commands clojurescript-mode)
 
 (provide 'init-clojure)
