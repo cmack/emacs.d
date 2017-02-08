@@ -4,7 +4,7 @@
 (auto-fill-mode 1)
 (column-number-mode t)
 
-(show-paren-mode 1)
+
 
 (setq backup-by-copying t
 
@@ -73,18 +73,24 @@
   (interactive)
   (untabify (point-min) (point-max)))
 
-(add-hook 'prog-mode-hook (lambda ()
-                            (setq show-trailing-whitespace t)
-                            (subword-mode 1)
-                            (add-hook 'before-save-hook 'whitespace-cleanup)
-                            (flyspell-prog-mode)))
+(defun cmack/prog-mode-hook ()
+   (setq show-trailing-whitespace t)
+   (subword-mode 1)
+   (add-hook 'before-save-hook 'whitespace-cleanup)
+   (flyspell-prog-mode)
+   (show-paren-mode 1))
+
+(defun cmack/after-init-hook ()
+  (bind-key "M-SPC" #'cycle-spacing)
+  (which-key-mode 1))
+
+(add-hook 'after-init-hook #'cmack/after-init-hook)
+(add-hook 'prog-mode-hook #'cmack/prog-mode-hook)
 
 ;;; Show trailing whitespace exceptions
 (dolist (hook '(eww-mode-hook minibuffer-setup-hook buffer-menu-mode-hook))
   (add-hook hook (lambda ()
                    (setq show-trailing-whitespace nil))))
-
-(add-hook 'after-init-hook (lambda () (bind-key "M-SPC" #'cycle-spacing)))
 
 (use-package aggressive-indent
   :ensure t
