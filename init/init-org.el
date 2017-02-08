@@ -22,4 +22,8 @@
 (use-package ox-md
   :after org)
 
+(use-package ox-reveal
+  :ensure t
+  :after org)
+
 (provide 'init-org)
