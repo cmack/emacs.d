@@ -106,6 +106,10 @@
   :ensure t
   :bind ("C-:" . avy-goto-char-timer))
 
+(use-package which-key
+  :ensure t
+  :commands which-key-mode)
+
 (use-package flyspell
   :commands (flyspell-prog-mode flyspell-mode)
   :config
