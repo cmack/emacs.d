@@ -1,6 +1,10 @@
 (use-package helm-ag
   :ensure t
-  :after (helm helm-projectile))
+  :after (helm helm-projectile)
+  :config
+  ;; ripgrep command:
+  (setf helm-grep-ag-command
+        "rg --smart-case --no-heading --line-number %s %s %s"))
 
 (use-package helm-config :defer 1)
 
@@ -42,12 +46,13 @@
 
 (use-package helm-gtags
   :ensure t
+  :after helm
   :commands helm-gtags-mode
   :bind (("M-." . helm-gtags-dwim)
          ("M-," . helm-gtags-pop-stack)
          ("M-r" . helm-gtags-find-rtag))
 
   :config
-  (custom-set-variables '(helm-gtags-auto-update t)))
+  (setq helm-gtags-auto-update t))
 
 (provide 'init-helm)
