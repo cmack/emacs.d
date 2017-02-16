@@ -1,13 +1,8 @@
-(require 'cl)
-
 (setq-default fill-column 78)
 (auto-fill-mode 1)
 (column-number-mode t)
 
-
-
 (setq backup-by-copying t
-
       delete-old-versions t
       kept-new-versions 6
       kept-old-versions 2
