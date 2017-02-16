@@ -100,6 +100,7 @@
 
 (use-package swiper
   :ensure t
+  :commands swiper
   :bind ("C-s" . swiper))
 
 (use-package avy
