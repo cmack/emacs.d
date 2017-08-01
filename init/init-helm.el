@@ -3,7 +3,7 @@
   :after (helm helm-projectile)
   :config
   ;; ripgrep command:
-  (setf helm-grep-ag-command
+  (custom-set-variable helm-grep-ag-command
         "rg --smart-case --no-heading --line-number %s %s %s"))
 
 (use-package helm-config :defer 1)
