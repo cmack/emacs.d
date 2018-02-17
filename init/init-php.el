@@ -64,7 +64,7 @@
     (emmet-mode +1)
     (flycheck-mode +1)
     ;; (ggtags-mode 1)
-    (helm-gtags-mode +1)
+    ;; (helm-gtags-mode +1)
     (company-mode +1)
     (eldoc-mode +1)
     (turn-on-auto-fill)
@@ -78,10 +78,33 @@
           flycheck-php-phpmd-executable "~/.composer/vendor/bin/phpmd")
 
     ;; Experiment with highlighting keys in assoc. arrays
-    (font-lock-add-keywords
-     'php-mode
-     '(("\\s\"\\([^\s;]+\\)\\s\"\\s-+=>\\s-+" 1 'font-lock-variable-name-face t)
-       ("->\\(\\w+\\)(" 1 'font-lock-function-name-face ))))
+    ;; (let ((array-keys-font-lock
+    ;;        (rx-to-string '(and (group (any "\"" "'")
+    ;;                                   (one-or-more (and (not (any space ";")))))
+    ;;                            (one-or-more space)
+    ;;                            "=>"
+    ;;                            (one-or-more space))))
+
+    ;;       (arrow-function-font-lock
+    ;;        (rx-to-string '(and "->" (group (one-or-more word)) "(")))
+
+    ;;       (psr2-type-hint-multiline-font-lock
+    ;;        (rx-to-string '(and (or "public" "private" "protected" "static")
+    ;;                            (one-or-more space) "function"
+    ;;                            (one-or-more space)
+    ;;                            (one-or-more (not (any ":" "{")))
+    ;;                            ":"
+    ;;                            (opt (one-or-more space))
+    ;;                            (group (one-or-more word))
+    ;;                            (opt (one-or-more space))
+    ;;                            "{"))))
+    ;;  (font-lock-add-keywords
+    ;;   'php-mode
+    ;;   (list (list array-keys-font-lock 1 'font-lock-variable-name-face t)
+    ;;         (list arrow-function-font-lock 1 'font-lock-function-name-face )
+    ;;         ;; (list psr2-type-hint-multiline-font-lock 1 'font-lock-type-face)
+    ;;         )))
+    (lsp-mode t))
 
   ;; (setq php-executable "/usr/bin/php")
   (setq php-mode-coding-style 'psr2)
@@ -91,4 +114,11 @@
 
   (add-hook 'php-mode-hook #'cmack/php-mode-hook))
 
+(use-package lsp-php
+  :ensure t
+  :after (php-mode lsp-mode)
+  :config (lsp-php-enable)
+  ;; :hook ((php-mode . lsp-php-enable))
+  :custom
+  (lsp-php-server-install-dir (expand-file-name "~/.composer/")))
 (provide 'init-php)

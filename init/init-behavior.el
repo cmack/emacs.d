@@ -118,5 +118,27 @@
   :ensure t
   :bind ("C-c C-u" . string-inflection-all-cycle))
 
+
+(use-package lsp-mode
+  :ensure t
+  ;; :disabled nil
+  ;; :config
+  ;; PHP
+  ;; (lsp-define-stdio-client 'php-mode
+  ;;                          "php"
+  ;;                          'stdio
+  ;;                          (lsp-make-traverser "composer.json")
+  ;;                          "PHP Language Server"
+  ;;                          "/Users/charliemcmackin/.composer/vendor/bin/php-language-server.php")
+  :custom
+  (lsp-response-timeout 25)
+  (lsp-enable-flycheck t)
+  (lsp-enable-eldoc t)
+  (lsp-enable-completion-at-point t))
+
+(use-package lsp-ui
+  :ensure t
+  :after lsp-mode
+  :hook ((lsp-mode . lsp-ui-mode)))
 (provide 'init-behavior)
 ;;; init-behavior.el ends here
