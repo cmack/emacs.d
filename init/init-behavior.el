@@ -69,13 +69,15 @@
   (untabify (point-min) (point-max)))
 
 (defun cmack/prog-mode-hook ()
-   (setq show-trailing-whitespace t)
-   (subword-mode 1)
-   (add-hook 'before-save-hook 'whitespace-cleanup)
-   (flyspell-prog-mode)
-   (show-paren-mode 1))
+  "My custom hook for prog-mode."
+  (setq show-trailing-whitespace t)
+  (subword-mode 1)
+  (add-hook 'before-save-hook 'whitespace-cleanup)
+  (flyspell-prog-mode)
+  (show-paren-mode 1))
 
 (defun cmack/after-init-hook ()
+  "My custom hook for after init."
   (bind-key "M-SPC" #'cycle-spacing)
   (which-key-mode 1))
 
