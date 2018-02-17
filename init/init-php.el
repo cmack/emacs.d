@@ -1,3 +1,5 @@
+;;; -*- lexical-binding: t -*-
+
 (use-package ggtags
   :ensure t
   :commands ggtags-mode
@@ -50,6 +52,7 @@
 
 (use-package php-mode
   :ensure t
+  :mode ("\\.php\\'" "\\.inc\\'" "\\.module\\'")
   :bind (("C--" . cmack/php-quick-arrow)
          :map php-mode-map
          ("C-d" . sp-delete-char))
