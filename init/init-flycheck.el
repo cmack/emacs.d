@@ -1,7 +1,7 @@
 (use-package flycheck
   :ensure t
   :diminish flycheck-mode
-  :after (projectile)
+  :after projectile
   :init (add-hook 'prog-mode-hook #'flycheck-mode)
   :config
 
@@ -20,4 +20,8 @@
   (add-hook 'global-flycheck-mode-hook #'cmack/add-projectile-root-to-eslint)
   (add-hook 'flycheck-mode-hook #'cmack/add-projectile-root-to-eslint))
 
+(use-package helm-flycheck
+  :ensure t
+  :after (helm flycheck)
+  :bind ("C-c ! !" . helm-flycheck))
 (provide 'init-flycheck)
