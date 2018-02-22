@@ -7,4 +7,13 @@
          ("C-n" . company-select-next)
          ("C-p" . company-select-previous)))
 
+(use-package company-lsp
+  :ensure t
+  :after (company lsp-mode)
+  :config
+  (add-to-list 'company-backends 'company-lsp)
+  :custom
+  (company-lsp-async t)
+  (company-lsp-enable-snippet t))
+
 (provide 'init-company)
