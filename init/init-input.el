@@ -1,6 +1,5 @@
-(use-package mozc
-  :ensure t
-  :defer t
-  :config (use-package mozc-popup :ensure t))
+(use-package mozc :ensure t :defer t)
+
+(use-package mozc-popup :after mozc :ensure t)
 
 (provide 'init-input)
