@@ -13,4 +13,8 @@
   (add-hook 'html-mode-hook (lambda ()
                               (setq ac-sources '(ac-source-semantic ac-source-yasnippet)))))
 
+(use-package yasnippet-snippets
+  :ensure t
+  :after yasnippet)
+
 (provide 'init-yasnippet)
