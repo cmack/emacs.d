@@ -136,23 +136,15 @@
   (dumb-jump-mode)
   (setq dumb-jump-prefer-searcher 'rg))
 
-
 (use-package lsp-mode
   :ensure t
+  :commands lsp-mode
   ;; :disabled nil
-  ;; :config
-  ;; PHP
-  ;; (lsp-define-stdio-client 'php-mode
-  ;;                          "php"
-  ;;                          'stdio
-  ;;                          (lsp-make-traverser "composer.json")
-  ;;                          "PHP Language Server"
-  ;;                          "/Users/charliemcmackin/.composer/vendor/bin/php-language-server.php")
-  :custom
-  (lsp-response-timeout 25)
-  (lsp-enable-flycheck t)
-  (lsp-enable-eldoc t)
-  (lsp-enable-completion-at-point t))
+  :config
+  (setq lsp-response-timeout 25
+        lsp-enable-flycheck t
+        lsp-enable-eldoc t
+        lsp-enable-completion-at-point t))
 
 (use-package lsp-ui
   :ensure t
