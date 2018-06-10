@@ -5,7 +5,9 @@
   :bind (("C-c C-y" . company-yasnippet)
          :map company-active-map
          ("C-n" . company-select-next)
-         ("C-p" . company-select-previous)))
+         ("C-p" . company-select-previous))
+  :config
+  (setq company-auto-complete t))
 
 (use-package company-lsp
   :ensure t
