@@ -36,7 +36,7 @@
 
 (use-package phpcbf
   :ensure t
-  :commands php-mode
+  :after php-mode
   :config
   (setq phpcbf-standard "PSR2"))
 
