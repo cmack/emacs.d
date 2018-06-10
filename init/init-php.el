@@ -44,11 +44,11 @@
   :ensure t
   :commands php-mode)
 
-(use-package company-php
-  :ensure t
-  :after php-mode
-  :config
-  (add-to-list 'company-backends 'company-ac-php-backend))
+;; (use-package company-php
+;;   :ensure t
+;;   :after php-mode
+;;   :config
+;;   (add-to-list 'company-backends 'company-ac-php-backend))
 
 (use-package php-mode
   :ensure t
@@ -117,23 +117,11 @@
 
   (add-hook 'php-mode-hook #'cmack/php-mode-hook))
 
-;; (use-package lsp-php
-;;   :ensure t
-;;   :after (php-mode lsp-mode)
-;;   :config
-;;   (lsp-php-enable)
-;;   :custom
-;;   (lsp-php-server-install-dir (expand-file-name "~/.composer/")))
-
 (use-package lsp-php
+  :ensure t
   :after (php-mode lsp-mode)
-  :load-path "~/Source/lsp-php"
-  :pin manual
   :hook ((php-mode . lsp-php-enable))
   :custom
-  (lsp-php-language-server-command
-   (list "php"
-         (expand-file-name "~/.composer/vendor/bin/php-language-server.php"))))
-
+  (lsp-php-server-install-dir (expand-file-name "~/.composer/")))
 
 (provide 'init-php)
