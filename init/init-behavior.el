@@ -100,6 +100,7 @@
 (use-package aggressive-indent
   :ensure t
   :defer 5
+  :disabled t
   :config
   (add-hook 'prog-mode-hook #'aggressive-indent-mode))
 
