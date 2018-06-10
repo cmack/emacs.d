@@ -38,6 +38,9 @@
         helm-ff-skip-boring-files t)
   (helm-mode 1))
 
+(use-package helm-adaptive
+  :hook (helm-mode . helm-adaptive-mode))
+
 (use-package helm-descbinds
   :ensure t
   :after helm
