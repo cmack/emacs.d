@@ -32,8 +32,10 @@
 (use-package exec-path-from-shell
   :if *mac-p*
   :ensure t
-  :defer 5
+  :defer 1
   :config
+  ;; Don't warn me about startup files
+  (setq exec-path-from-shell-check-startup-files nil)
   (exec-path-from-shell-initialize))
 
 (use-package rainbow-mode
