@@ -1,11 +1,13 @@
 (use-package latex
   :ensure auctex
-  :commands (latex-mode LaTeX-mode plain-tex-mode)
+  :commands (latex-mode LaTeX-mode plain-tex-mode))
+
+(use-package pdf-tools
+  :ensure t
+  :after latex
   :config
-  (use-package pdf-tools
-    :ensure t
-    :config
-    (pdf-tools-install)))
+  (pdf-tools-install))
+
 
 (use-package tex
   :defer t
