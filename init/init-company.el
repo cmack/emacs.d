@@ -11,7 +11,7 @@
 
 (use-package company-lsp
   :ensure t
-  :after (company lsp-mode)
+  :commands company-lsp
   :config
   (add-to-list 'company-backends 'company-lsp)
   :custom
