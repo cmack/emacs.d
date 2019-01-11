@@ -6,6 +6,10 @@
                    (*windows-p*
                     '(font . "-unknown-Inconsolata-normal-normal-normal-*-16-*-*-*-m-0-iso10646-1" ))))
 
+(when *cocoa-emacs-p*
+  (add-to-list 'default-frame-alist '(ns-appearance . dark))
+  (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t)))
+
 (use-package color-theme
   :if (< emacs-major-version 24))
 
