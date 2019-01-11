@@ -52,5 +52,6 @@
 (require 'init-tex)
 (require 'init-sql)
 (require 'init-org)
+(require 'init-terraform)
 
 (load custom-file)
