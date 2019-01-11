@@ -139,17 +139,22 @@
 
 (use-package lsp-mode
   :ensure t
-  :commands lsp-mode
+  :commands lsp
   ;; :disabled nil
   :config
-  (setq lsp-response-timeout 25
-        lsp-enable-flycheck t
+  (setq lsp-response-timeout 4
         lsp-enable-eldoc t
-        lsp-enable-completion-at-point t))
+        lsp-enable-completion-at-point t)
+  :hook ((php-mode . lsp)))
 
 (use-package lsp-ui
   :ensure t
-  :after lsp-mode
-  :hook ((lsp-mode . lsp-ui-mode)))
+  :commands lsp-ui-mode
+  ;; :hook (lsp-mode . lsp-ui-mode)
+  :bind (("M-." . lsp-ui-peek-find-definitions)
+         ("M-?" . lsp-ui-peek-find-references))
+  :config
+  (setq lsp-ui-flycheck-enable t))
+
 (provide 'init-behavior)
 ;;; init-behavior.el ends here
