@@ -1,6 +1,5 @@
 (use-package erc
   :commands erc
-  :ensure t
   :config
   (setq erc-nick "cmack"
         erc-autojoin-channels-alist '(("#lisp" "#yui" "#sbcl" "#ruby"))

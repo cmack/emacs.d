@@ -1,6 +1,5 @@
 (use-package cperl-mode
   :defer t
-  :ensure t
   :config
   (progn
      (setq cperl-brace-offset 0)
