@@ -87,6 +87,9 @@
 (defun cmack/after-init-hook ()
   "My custom hook for after init."
   (bind-key "M-SPC" #'cycle-spacing)
+
+  ;; Handle JIS keyboard
+  (bind-key "C-M-¥" #'indent-region)
   (which-key-mode 1))
 
 (add-hook 'after-init-hook #'cmack/after-init-hook)
