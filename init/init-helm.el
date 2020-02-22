@@ -48,6 +48,7 @@
 
 (use-package helm-gtags
   :ensure t
+  :disabled t
   :after helm
   :commands helm-gtags-mode
   :bind (("M-." . helm-gtags-dwim)
