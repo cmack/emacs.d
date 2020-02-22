@@ -6,26 +6,25 @@
   (setf helm-grep-ag-command
         "rg --smart-case --no-heading --line-number %s %s %s"))
 
-(use-package helm-config :defer 1)
+(use-package helm-config
+  :after helm)
 
 (use-package helm
   :ensure t
   :diminish helm-mode
-  :after helm-config
-  ;; :commands helm-mode
-  :bind  (("C-c h" . helm-mini)
-          ("C-h a" . helm-apropos)
-          ("C-x b" . helm-buffers-list)
-          ("C-x C-b" . helm-buffers-list)
-          ("C-x C-f" . helm-find-files)
-          ("C-x c o" . helm-occur)
-          ;; ("C-x c s" . helm-swoop)
-          ;; ("C-x c y" . helm-yas-complete)
-          ;; ("C-x c Y" . helm-yas-create-snippet-on-region)
-          ("C-x c SPC" . helm-all-mark-rings)
-          ("M-y" . helm-show-kill-ring)
-          ("M-x" . helm-M-x))
-
+  :bind
+  (("C-c h" . helm-mini)
+   ("C-h a" . helm-apropos)
+   ("C-x b" . helm-buffers-list)
+   ("C-x C-b" . helm-buffers-list)
+   ("C-x C-f" . helm-find-files)
+   ("C-x c o" . helm-occur)
+   ;; ("C-x c s" . helm-swoop)
+   ;; ("C-x c y" . helm-yas-complete)
+   ;; ("C-x c Y" . helm-yas-create-snippet-on-region)
+   ("C-x c SPC" . helm-all-mark-rings)
+   ("M-y" . helm-show-kill-ring)
+   ("M-x" . helm-M-x))
   :config
   (setq helm-candidate-number-limit 100)
   ;; From https://gist.github.com/antifuchs/9238468
@@ -36,7 +35,7 @@
         helm-quick-update t
         helm-M-x-requires-pattern nil
         helm-ff-skip-boring-files t)
-  (helm-mode 1))
+  :hook (after-init . helm-mode))
 
 (use-package helm-adaptive
   :hook (helm-mode . helm-adaptive-mode))
