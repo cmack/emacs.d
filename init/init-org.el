@@ -9,7 +9,10 @@
 
   :config
   (defun cmack/org-mode-hook ()
-    (visual-line-mode t))
+    (visual-line-mode t)
+    (add-hook 'completion-at-point-functions 'pcomplete-completions-at-point nil t)
+    (company-mode t)
+    (push '(company-capf :with company-yasnippet) company-backends))
 
   (setq org-pretty-entities t
         org-return-follows-link t
