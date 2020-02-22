@@ -4,20 +4,16 @@
 
 (use-package helm-projectile
   :ensure t
-  :commands helm-projectile-on)
+  :after (projectile helm)
+  :config
+  (helm-projectile-on))
 
 (use-package projectile
   :ensure t
   :commands projectile-mode
+  :hook ( prog-mode . projectile-mode)
   :bind-keymap ("C-c p" . projectile-command-map)
-  :init
-  (add-hook 'prog-mode-hook #'projectile-mode)
   :config
-  (helm-projectile-on)
   (setq projectile-completion-system 'helm))
-
-(use-package projectile-ripgrep
-  :after projectile
-  :bind (:map projectile-command-map ("s r" . projectile-ripgrep)))
 
 (provide 'init-projectile)
