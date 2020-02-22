@@ -57,4 +57,8 @@
   :config
   (setq helm-gtags-auto-update t))
 
+(use-package helm-lsp
+  :ensure t
+  :commands helm-lsp-workspace-symbol)
+
 (provide 'init-helm)
