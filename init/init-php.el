@@ -110,10 +110,13 @@
     (insert (if arg "=>" "->")))
 
   ;; (setq php-executable "/usr/bin/php")
-  (setq php-mode-coding-style 'psr2)
+  (setq php-mode-coding-style 'psr2
+        php-project-use-projectile-to-detect-root t)
   (setq tab-width 4
         fill-column 119
-        indent-tabs-mode nil)
+        indent-tabs-mode nil
+        lsp-intelephense-storage-path (expand-file-name "~/.cache/lsp-cache"))
+
 
   (add-hook 'php-mode-hook #'cmack/php-mode-hook))
 
