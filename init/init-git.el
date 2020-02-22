@@ -8,6 +8,8 @@
 
   :config
   (setq magit-save-some-buffers nil
-        magit-last-seen-setup-instructions "1.4.0"))
+        magit-last-seen-setup-instructions "1.4.0")
+  :hook (after-init . global-magit-file-mode))
+
 
 (provide 'init-git)
