@@ -1,10 +1,10 @@
 (use-package helm-ag
   :ensure t
-  :after (helm helm-projectile)
-  :config
-  ;; ripgrep command:
-  (setf helm-grep-ag-command
-        "rg --smart-case --no-heading --line-number %s %s %s"))
+  :after helm)
+
+(use-package helm-rg
+  :ensure t
+  :commands helm-mode)
 
 (use-package helm-config
   :after helm)
