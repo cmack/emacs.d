@@ -142,13 +142,17 @@
 
 (use-package lsp-mode
   :ensure t
-  :commands lsp
+  :commands (lsp lsp-deferred)
   ;; :disabled nil
   :config
-  (setq lsp-response-timeout 4
-        lsp-enable-eldoc t
-        lsp-enable-completion-at-point t)
-  :hook ((php-mode . lsp)))
+  (setq lsp-file-watch-threshold 200000)
+  (setq lsp-enable-file-watchers nil)
+
+  ;; (setq lsp-response-timeout 2
+  ;;       lsp-enable-eldoc t
+  ;;       lsp-enable-completion-at-point t)
+  :hook ((php-mode . lsp-deferred)
+         (lsp-mode . lsp-enable-which-key-integration)))
 
 (use-package lsp-ui
   :ensure t
@@ -157,7 +161,8 @@
   :bind (("M-." . lsp-ui-peek-find-definitions)
          ("M-?" . lsp-ui-peek-find-references))
   :config
-  (setq lsp-ui-flycheck-enable t))
+  ;;  (setq lsp-ui-flycheck-enable t)
+  )
 
 (provide 'init-behavior)
 ;;; init-behavior.el ends here
