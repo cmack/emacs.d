@@ -18,18 +18,12 @@
   (setq js2-bounce-indent-p t)
   (setq js2-consistent-level-indent-inner-bracket-p t)
   (setq js2-pretty-multiline-decl-indentation-p t)
-  (add-hook 'js2-mode-hook #'js2-refactor-mode)
-  (tern-mode 1))
+  (add-hook 'js2-mode-hook #'js2-refactor-mode))
 
 (use-package tern
-  :ensure t
-  :commands tern-mode)
-
-(use-package company-tern
-  :ensure t
-  :after tern
-  :config
-  (add-to-list 'company-backends 'tern-company))
+  :disabled t
+  :commands tern-mode
+  :after js-2-mode)
 
 (use-package nodejs-repl
   :ensure t
