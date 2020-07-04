@@ -1,5 +1,4 @@
 (use-package dired+
-  :ensure t
   :defer t
   :config
   (progn
