@@ -164,5 +164,9 @@
   ;;  (setq lsp-ui-flycheck-enable t)
   )
 
+(use-package editorconfig
+  :ensure t
+  :hook ((prog-mode . editorconfig-mode)))
+
 (provide 'init-behavior)
 ;;; init-behavior.el ends here
