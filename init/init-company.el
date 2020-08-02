@@ -14,13 +14,4 @@
         company-show-numbers t
         company-tooltip-align-annotations t))
 
-(use-package company-lsp
-  :ensure t
-  :commands company-lsp
-  :config
-  (add-to-list 'company-backends 'company-lsp)
-  :custom
-  (company-lsp-async t)
-  (company-lsp-enable-snippet t))
-
 (provide 'init-company)
