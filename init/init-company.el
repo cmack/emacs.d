@@ -1,6 +1,8 @@
 (use-package company
   :ensure t
   :commands company-mode
+  :config
+  (setq company-auto-complete t)
   :hook ((prog-mode . company-mode))
   :bind (("C-c C-y" . company-yasnippet)
          :map company-active-map
