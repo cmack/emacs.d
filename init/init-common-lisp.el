@@ -11,42 +11,49 @@
 (use-package slime
   :ensure t
   :commands slime
+  :functions slime-setup
   :config
-  (progn
-    (require 'slime-autoloads)
-    ;;some niftiness nicked from Bill Clementson
-    ;; (defun bc-slime-connect ()
-    ;;   "Connect to Swank with defaults."
-    ;;   (interactive)
-    ;;   (slime-connect slime-lisp-host (format "%d" slime-port)))
+  (setq inferior-lisp-program "sbcl"
+        slime-complete-symbol*-fancy t
+        slime-completion-at-point-functions 'slime-fuzzy-complete-symbol
+        slime-when-complete-filename-expand t
+        slime-truncate-lines nil
+        slime-autodoc-use-multiline-p t
+        slime-net-coding-system 'utf-8-unix
+        slime-startup-animation nil
+        slime-port 4005
+        common-lisp-hyperspec-root "/home/charlie/lisp/HyperSpec/")
 
-    (setq inferior-lisp-program "sbcl"
-          slime-complete-symbol*-fancy t
-          slime-complete-symbol-function 'slime-fuzzy-complete-symbol
-          slime-when-complete-filename-expand t
-          slime-truncate-lines nil
-          slime-autodoc-use-multiline-p t
-          slime-net-coding-system 'utf-8-unix
-          slime-startup-animation nil
-          slime-port 4005
-          common-lisp-hyperspec-root "/home/charlie/lisp/HyperSpec/")
+  (slime-setup '(slime-repl
+                 slime-fancy
+                 slime-asdf
+                 slime-banner
+                 helm-slime
+                 slime-company))
 
-    (slime-setup '(slime-fancy slime-asdf slime-banner))
+  ;; (define-key slime-repl-mode-map (kbd "C-c ;") 'slime-insert-balanced-comments)
+  ;; (define-key slime-repl-mode-map (kbd "C-c M-;") 'slime-remove-balanced-comments)
+  ;; (define-key slime-mode-map (kbd "C-c ;") 'slime-insert-balanced-comments)
+  ;; (define-key slime-mode-map (kbd "C-c M-;") 'slime-remove-balanced-comments)
+  ;; (define-key slime-mode-map (kbd "RET") 'newline-and-indent)
+  ;; (define-key slime-mode-map (kbd "<return>") 'newline-and-indent)
+  ;; (define-key slime-mode-map (kbd "C-j") 'newline)
 
-    ;; (define-key slime-repl-mode-map (kbd "C-c ;") 'slime-insert-balanced-comments)
-    ;; (define-key slime-repl-mode-map (kbd "C-c M-;") 'slime-remove-balanced-comments)
-    ;; (define-key slime-mode-map (kbd "C-c ;") 'slime-insert-balanced-comments)
-    ;; (define-key slime-mode-map (kbd "C-c M-;") 'slime-remove-balanced-comments)
-    ;; (define-key slime-mode-map (kbd "RET") 'newline-and-indent)
-    ;; (define-key slime-mode-map (kbd "<return>") 'newline-and-indent)
-    ;; (define-key slime-mode-map (kbd "C-j") 'newline)
+  (add-hook 'lisp-mode-hook (lambda ()
+                              (cond ((not (featurep 'slime))
+                                     (require 'slime)
+                                     (normal-mode)))
+                              (modify-syntax-entry ?- "w"))))
 
-    (add-hook 'lisp-mode-hook (lambda ()
-                                (cond ((not (featurep 'slime))
-                                       (require 'slime)
-                                       (normal-mode)))
-                                (modify-syntax-entry ?- "w")))))
+(use-package slime-company
+  :ensure t
+  :after (slime company)
+  :config
+  (setq slime-company-completion 'fuzzy))
 
+(use-package helm-slime
+  :ensure t
+  :after (helm slime))
 
 ;; LispDoc access from Bill Clementson
 (defun lispdoc ()
