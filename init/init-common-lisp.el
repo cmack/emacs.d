@@ -1,12 +1,6 @@
 (use-package paredit
   :ensure t
-  :defer t
-  :init
-  (mapc (lambda (mode)
-        (let ((hook (intern (concat (symbol-name mode)
-                                    "-mode-hook"))))
-          (add-hook hook (lambda () (paredit-mode +1)))))
-      '(emacs-lisp lisp inferior-lisp)))
+  :hook ((lisp-mode inferior-lisp emacs-lisp-mode) . paredit-mode))
 
 (use-package slime
   :ensure t
