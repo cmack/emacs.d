@@ -132,12 +132,9 @@
 
 (use-package dumb-jump
   :ensure t
-  :bind (("C-c f" . dumb-jump-go)
-         ("C-c b" . dumb-jump-back)
-         ("C-c x" . dumb-jump-go-prefer-external)
-         ("C-c z" . dump-jump-go-prefer-external-other-window))
+  :hook
+  (xref-backend-functions . dumb-jump-xref-activate)
   :config
-  (dumb-jump-mode)
   (setq dumb-jump-prefer-searcher 'rg))
 
 (use-package lsp-mode
