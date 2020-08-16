@@ -6,7 +6,7 @@
 ;; You may delete these explanatory comments.
 ;; (package-initialize)
 
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/init"))
+(add-to-list 'load-path (directory-file-name (locate-user-emacs-file "init")))
 
 (defconst *spell-check-support-enabled* nil)
 (defconst *windows-p* (eq system-type 'windows-nt))

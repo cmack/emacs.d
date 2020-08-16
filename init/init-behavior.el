@@ -8,16 +8,14 @@
       kept-old-versions 2
       version-control t)
 
-(setq backup-directory-alist
-      `(("." . ,(expand-file-name
-                 (concat user-emacs-directory "backups")))))
+(setq backup-directory-alist `(("." . ,(locate-user-emacs-file "backups"))))
 
-(setq auto-save-file-name-transforms '((".*" "~/.emacs.d/autosaves" t)))
+(setq auto-save-file-name-transforms `((".*" ,(locate-user-emacs-file  "autosaves") t)))
 ;; (setq auto-save-file-name-transforms
 ;;       '(("\\`/?\\([^/]*/\\)*\\([^/]*\\)\\'"  "~/.emacs.d/autosaves/\\2" t)))
 
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
-
+;; (add-to-list 'custom-theme-load-path (locate-user-emacs-file "themes"))
+(setq-default custom-theme-directory (locate-user-emacs-file "themes"))
 (setq-default indent-tabs-mode nil)
 
 (use-package ediff
@@ -64,7 +62,7 @@
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
 
-(setq custom-file "~/.emacs.d/custom.el")
+(setq custom-file (locate-user-emacs-file "custom.el"))
 
 (defun tabify-buffer ()
   "TABIFY the whole buffer."
