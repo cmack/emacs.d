@@ -59,8 +59,10 @@
   (electric-indent-mode t)
   (electric-layout-mode t))
 
-(require 'uniquify)
-(setq uniquify-buffer-name-style 'post-forward-angle-brackets)
+(use-package uniquify
+  :ensure nil
+  :config
+  (setq uniquify-buffer-name-style 'post-forward-angle-brackets))
 
 (setq custom-file (locate-user-emacs-file "custom.el"))
 
