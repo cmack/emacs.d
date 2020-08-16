@@ -8,8 +8,7 @@
 
   :config
   (setq-default magit-diff-refine-hunk t)
-  (setq magit-save-some-buffers nil
-        magit-last-seen-setup-instructions "1.4.0")
+  (setq magit-last-seen-setup-instructions "1.4.0")
   :hook (after-init . global-magit-file-mode))
 
 
