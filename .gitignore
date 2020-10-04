@@ -18,3 +18,4 @@ recentf
 projectile.cache
 projectile-bookmarks*
 /.python-environments
+/eln-cache/
