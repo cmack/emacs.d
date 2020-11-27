@@ -53,5 +53,6 @@
 (require 'init-sql)
 (require 'init-org)
 (require 'init-terraform)
+(require 'init-csv)
 
 (load custom-file)
