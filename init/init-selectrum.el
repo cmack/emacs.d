@@ -26,6 +26,7 @@
   :ensure t
   :after (selectrum projectile)
   :bind  (("C-h a" . consult-apropos)
+          ("C-s" . consult-line)
           ("C-x b" . consult-buffer)
           ("C-x 4 b" . consult-buffer-other-window)
           ("C-x 5 b" . consult-buffer-other-frame)
