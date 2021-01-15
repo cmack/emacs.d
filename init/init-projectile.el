@@ -6,14 +6,13 @@
   :ensure t
   :after (projectile helm)
   :config
+  (setq projectile-completion-system 'helm)
   (helm-projectile-on))
 
 (use-package projectile
   :ensure t
   :commands projectile-mode
-  :hook ( prog-mode . projectile-mode)
-  :bind-keymap ("C-c p" . projectile-command-map)
-  :config
-  (setq projectile-completion-system 'helm))
+  :hook (prog-mode . projectile-mode)
+  :bind-keymap ("C-c p" . projectile-command-map))
 
 (provide 'init-projectile)
