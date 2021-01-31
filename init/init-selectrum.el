@@ -50,5 +50,13 @@
   (setq-default marginalia-annotators '(marginalia-annotators-heavy))
   :hook (after-init . marginalia-mode))
 
+(use-package orderless
+  :ensure t
+  :after selectrum
+  :custom
+  (completion-styles (list 'orderless))
+  (selectrum-refine-candidates-function #'orderless-filter)
+  (selectrum-highlight-candidates-function #'orderless-highlight-matches))
+
 (provide 'init-selectrum)
 ;;; init-selectrum.el ends here
