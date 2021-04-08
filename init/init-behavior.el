@@ -120,11 +120,20 @@
   :ensure t
   :commands which-key-mode)
 
+(use-package ispell
+  :config
+  (let ((executable (executable-find "hunspell")))
+    (when executable
+      (setq-default ispell-program-name executable)
+      (setq ispell-command-name "hunspell"
+            ispell-dictionary "en_US"
+            ispell-really-hunspell t
+            ispell-extra-args '("-a" "-i" "utf-8")))))
+
 (use-package flyspell
   :commands (flyspell-prog-mode flyspell-mode)
-  :config
-  (setq ispell-command-name "aspell")
-  (setq ispell-extra-args '("--sug-mode=ultra" "--lang=en_US")))
+  :custom
+  (flyspell-issue-message-flag nil))
 
 (use-package string-inflection
   :ensure t
