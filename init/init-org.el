@@ -1,3 +1,7 @@
+;;; init-org.el --- Org mode config      -*- lexical-binding: t; -*-
+;;; Commentary:
+;;; Code:
+
 (use-package org
   :defer t
   :init
@@ -29,4 +33,20 @@
   :ensure t
   :after org)
 
+(use-package org-roam
+  :hook
+  (after-init . org-roam-mode)
+  :custom
+  (org-roam-directory "~/Documents/org-files/")
+  :bind (:map org-roam-mode-map
+              (("C-c n l" . org-roam)
+               ("C-c n f" . org-roam-find-file)
+               ("C-c n g" . org-roam-show-graph))
+              :map org-mode-map
+              (("C-c n i" . org-roam-insert)
+               ("C-c n I" . org-roam-insert-immediate)))
+  :config
+  (setq org-roam-completion-system 'helm))
+
 (provide 'init-org)
+;;; init-org.el ends here
