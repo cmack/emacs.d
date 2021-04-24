@@ -1,3 +1,6 @@
+;;; init-elpa --- Elpa customizations   -*- lexical-binding: t; -*-
+;;; Commentary:
+;;; Code:
 ;;------------------------------------------------------------------------------
 ;; Standard package repositories
 ;;------------------------------------------------------------------------------
@@ -5,6 +8,7 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 ;; (add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/") t)
 (add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/") t)
+
 
 ;;------------------------------------------------------------------------------
 ;; On-demand installation of packages
@@ -48,7 +52,8 @@
 
 (use-package rainbow-delimiters
   :ensure t
-  :commands rainbow-delimiters-mode)
+  :commands rainbow-delimiters-mode
+  :hook (prog-mode . rainbow-delimiters-mode))
 
 ;; (require-package 'ace-jump-mode)
 ;; (require-package 'fill-column-indicator)
