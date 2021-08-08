@@ -16,7 +16,8 @@
   :after smartparens)
 
 (use-package php-extras
-  :ensure t
+  :disabled t
+  :ensure nil
   :commands php-mode)
 
 (use-package phpunit
