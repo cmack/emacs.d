@@ -100,6 +100,10 @@
   (add-hook hook (lambda ()
                    (setq show-trailing-whitespace nil))))
 
+(use-package cycle-quotes
+  :ensure t
+  :bind (("C-x C-'" . cycle-quotes)))
+
 (use-package aggressive-indent
   :ensure t
   :defer 5
