@@ -19,12 +19,6 @@
   :ensure t
   :commands php-mode)
 
-(use-package phpcbf
-  :ensure t
-  :after php-mode
-  :config
-  (setq phpcbf-standard "PSR2"))
-
 (use-package phpunit
   :ensure t
   :commands php-mode)
