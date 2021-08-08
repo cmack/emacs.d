@@ -12,7 +12,7 @@
 (use-package projectile
   :ensure t
   :commands projectile-mode
-  :hook (prog-mode . projectile-mode)
+  :hook (after-init . projectile-mode)
   :bind-keymap ("C-c p" . projectile-command-map))
 
 (provide 'init-projectile)
