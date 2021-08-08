@@ -4,7 +4,9 @@
 
 (use-package selectrum
   :ensure t
-  :hook (after-init . selectrum-mode))
+  :hook (after-init . selectrum-mode)
+  :custom
+  (selectrum-max-window-height 40))
 
 (use-package prescient
   :ensure t
