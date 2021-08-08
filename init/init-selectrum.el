@@ -37,7 +37,9 @@
 
 (use-package consult-flycheck
   :ensure t
-  :after (consult flycheck))
+  :after (consult flycheck)
+  :bind (:map flycheck-command-map
+              ("!" . consult-flycheck)))
 
 (use-package embark-consult
   :ensure t

@@ -2,7 +2,6 @@
   :ensure t
   :diminish flycheck-mode
   :after projectile
-  :init (add-hook 'prog-mode-hook #'flycheck-mode)
   :config
 
   ;; disable jshint since we prefer eslint checking
@@ -18,10 +17,13 @@
       (add-to-list 'flycheck-eslint-rules-directories (projectile-project-root))))
 
   (add-hook 'global-flycheck-mode-hook #'cmack/add-projectile-root-to-eslint)
-  (add-hook 'flycheck-mode-hook #'cmack/add-projectile-root-to-eslint))
+  (add-hook 'flycheck-mode-hook #'cmack/add-projectile-root-to-eslint)
+  :hook ((prog-mode) . flycheck-mode))
 
 (use-package helm-flycheck
   :ensure t
+  :disabled t
   :after (helm flycheck)
   :bind ("C-c ! !" . helm-flycheck))
+
 (provide 'init-flycheck)
