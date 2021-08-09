@@ -37,19 +37,15 @@
   :after org)
 
 (use-package org-roam
-  :hook
-  (after-init . org-roam-mode)
   :custom
   (org-roam-directory "~/Documents/org-files/")
-  :bind (:map org-roam-mode-map
-              (("C-c n l" . org-roam)
-               ("C-c n f" . org-roam-find-file)
-               ("C-c n g" . org-roam-show-graph))
-              :map org-mode-map
-              (("C-c n i" . org-roam-insert)
-               ("C-c n I" . org-roam-insert-immediate)))
+  (org-roam-completion-everywhere t)
+  :bind (("C-c n l" . org-roam)
+         ("C-c n f" . org-roam-node-find)
+         ("C-c n g" . org-roam-show-graph)
+         ("C-c n i" . org-roam-node-insert))
   :config
-  (setq org-roam-completion-system 'helm))
+  (org-roam-setup))
 
 (provide 'init-org)
 ;;; init-org.el ends here
