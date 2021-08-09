@@ -24,7 +24,10 @@
   :hook
   ((org-mode . visual-line-mode)
    (org-mode . company-mode)
-   (org-mode . cmack/org-mode-hook)))
+   (org-mode . cmack/org-mode-hook))
+  :custom
+  (org-babel-load-languages '((emacs-lisp . t)
+                              (shell . t))))
 
 (use-package ox-md
   :after org)
