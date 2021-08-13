@@ -78,10 +78,8 @@
   :commands tagedit-mode
   :config
   (tagedit-add-paredit-like-keybindings)
-
-  (add-hook 'sgml-mode-hook 'tagedit-mode)
-  (add-hook 'html-mode-hook 'tagedit-mode)
   ;; (add-hook 'web-mode-hook 'tagedit-mode)
-  )
+  :hook
+  (((sgml-mode html-mode) . tagedit-mode)))
 
 (provide 'init-web)
