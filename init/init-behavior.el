@@ -106,10 +106,9 @@
 
 (use-package aggressive-indent
   :ensure t
-  :defer 5
   :disabled t
-  :config
-  (add-hook 'prog-mode-hook #'aggressive-indent-mode))
+  :hook
+  (prog-mode . aggressive-indent-mode))
 
 (use-package swiper
   :ensure t
