@@ -55,10 +55,7 @@
   (setq web-mode-content-types-alist
         '(("jsx" . "/\\(container\\|component\\)[s]?/.*\\.js[x]?\\'")))
 
-  (subword-mode)
-  (emmet-mode)
-  (add-hook 'before-save-hook 'delete-trailing-whitespace)
-
+  :init
   (add-hook 'web-mode-before-auto-complete-hooks
             '(lambda ()
                (let ((web-mode-cur-language (web-mode-language-at-pos)))
@@ -71,8 +68,10 @@
                  (if (string= web-mode-cur-language "css")
                      (setq emmet-use-css-transform t)
                    (setq emmet-use-css-transform nil)))))
-
-  (add-hook 'html-mode-hook 'web-mode))
+  :hook ((web-mode . subword-mode)
+         (web-mode . emmet-mode)
+         (before-save . delete-trailing-whitespace)
+         html-mode))
 
 (use-package tagedit
   :ensure t
