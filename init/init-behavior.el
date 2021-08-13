@@ -76,14 +76,6 @@
   (interactive)
   (untabify (point-min) (point-max)))
 
-(defun cmack/prog-mode-hook ()
-  "My custom hook for prog-mode."
-  (setq show-trailing-whitespace t)
-  (subword-mode 1)
-  (add-hook 'before-save-hook 'whitespace-cleanup)
-  (flyspell-prog-mode)
-  (show-paren-mode 1))
-
 (defun cmack/after-init-hook ()
   "My custom hook for after init."
   (bind-key "M-SPC" #'cycle-spacing)
@@ -93,12 +85,20 @@
   (which-key-mode 1))
 
 (add-hook 'after-init-hook #'cmack/after-init-hook)
-(add-hook 'prog-mode-hook #'cmack/prog-mode-hook)
 
 ;;; Show trailing whitespace exceptions
 (dolist (hook '(eww-mode-hook minibuffer-setup-hook buffer-menu-mode-hook))
   (add-hook hook (lambda ()
-                   (setq show-trailing-whitespace nil))))
+                   (setq-local show-trailing-whitespace nil))))
+
+(use-package prog-mode
+  :commands prog-mode
+  :custom
+  (show-trailing-whitespace t)
+  :hook ((before-save . whitespace-cleanup)
+         (prog-mode . subword-mode)
+         (prog-mode . flyspell-prog-mode)
+         (prog-mode . show-paren-mode)))
 
 (use-package cycle-quotes
   :ensure t
