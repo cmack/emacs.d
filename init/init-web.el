@@ -24,9 +24,8 @@
 (use-package emmet-mode
   :ensure t
   :commands emmet-mode
-  :config
-  (add-hook 'web-mode-hook #'emmet-mode)
-  (add-hook 'html-mode-hook #'emmet-mode))
+  :hook
+  (web-mode html-mode))
 
 (use-package web-mode
   :ensure t
