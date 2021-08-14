@@ -58,7 +58,7 @@
   :ensure t
   :after selectrum
   :custom
-  (completion-styles (list 'orderless))
+  (completion-styles (list 'orderless 'flex))
   (selectrum-refine-candidates-function #'orderless-filter)
   (selectrum-highlight-candidates-function #'orderless-highlight-matches))
 
