@@ -31,8 +31,9 @@
 
 ;; TODO have graceful browser fallbacks
 (when window-system
-  (when *linux-p*
-    (setq browse-url-generic-program "/usr/bin/xdg-open"))
+  (when-let ((path (and *linux-p*
+                        (executable-find "xdg-open"))))
+    (setq browse-url-generic-program path))
   (setq browse-url-browser-function
         (cond (*linux-p* 'browse-url-generic)
               (*mac-p* 'browse-url-default-macosx-browser)
