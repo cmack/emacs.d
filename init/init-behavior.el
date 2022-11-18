@@ -83,7 +83,10 @@
 
   ;; Handle JIS keyboard
   (bind-key "C-M-¥" #'indent-region)
-  (which-key-mode 1))
+  (which-key-mode 1)
+  ;; prevent accidental sleeping
+  (global-unset-key (kbd "C-z"))
+  (global-unset-key (kbd "C-x C-z")))
 
 (add-hook 'after-init-hook #'cmack/after-init-hook)
 
