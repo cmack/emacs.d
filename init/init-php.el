@@ -98,6 +98,7 @@
         lsp-intelephense-storage-path (expand-file-name "~/.cache/lsp-cache"))
 
 
-  (add-hook 'php-mode-hook #'cmack/php-mode-hook))
+  (add-hook 'php-mode-hook #'cmack/php-mode-hook)
+  (add-hook 'project-find-functions #'php-project-project-find-function 0 t))
 
 (provide 'init-php)
