@@ -47,13 +47,14 @@
 (setq-default buffer-file-coding-system 'utf-8)
 
 (use-package mwheel
-  :config
-  ;; Disable "inertia scrolling"
-  (setq mouse-wheel-progressive-speed nil)
+  :custom
+    ;; Disable "inertia scrolling"
+  (mouse-wheel-progressive-speed nil)
 
+  (mouse-wheel-tilt-scroll t)
+  (mouse-wheel-follow-mouse t)
   ;; Scroll less line per wheel move event
-  (setq mouse-wheel-scroll-amount '(2 ((shift) . 1) ((control))))
-  (setq mouse-wheel-follow-mouse t))
+  (mouse-wheel-scroll-amount '(2 ((shift) . hscroll) ((control)))))
 
 (when (>= emacs-major-version 24)
   ;; (electric-pair-mode t)
