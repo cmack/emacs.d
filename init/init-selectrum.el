@@ -2,31 +2,23 @@
 ;;; Commentary:
 ;;; Code:
 
-(use-package selectrum
+(use-package vertico
   :ensure t
-  :hook (after-init . selectrum-mode)
+  :hook (after-init . vertico-mode)
   :custom
-  (selectrum-max-window-height 40))
+  (vertico-count 13)
+  (vertico-resize t)
+  (vertico-cycle t))
 
 (use-package prescient
   :ensure t
-  :after selectrum
+  :after vertico
   :config
   (prescient-persist-mode 1))
 
-(use-package selectrum-prescient
-  :ensure t
-  :after (selectrum prescient)
-  :config
-  (selectrum-prescient-mode 1))
-
-(use-package embark
-  :ensure t
-  :after selectrum)
-
 (use-package consult
   :ensure t
-  :after (selectrum projectile)
+  :after (vertico project)
   :bind  (("C-h a" . consult-apropos)
           ("C-s" . consult-line)
           ("C-x b" . consult-buffer)
@@ -35,7 +27,7 @@
           ("M-g g" . consult-goto-line)
           ("M-g M-g" . consult-goto-line))
   :config
-  (setq-default consult-project-root-function #'projectile-project-root))
+  (setq-default consult-project-root-function #'project-root))
 
 (use-package consult-flycheck
   :ensure t
@@ -54,13 +46,16 @@
   (setq-default marginalia-annotators '(marginalia-annotators-heavy))
   :hook (after-init . marginalia-mode))
 
+(use-package embark
+  :ensure t
+  :after vertico
+  :bind (("C-." . embark-act)
+         ("C-h b" . embark-bindings)))
+
 (use-package orderless
   :ensure t
-  :after selectrum
   :custom
-  (completion-styles (list 'orderless 'flex))
-  (selectrum-refine-candidates-function #'orderless-filter)
-  (selectrum-highlight-candidates-function #'orderless-highlight-matches))
+  (completion-styles (list 'orderless 'flex)))
 
 (provide 'init-selectrum)
 ;;; init-selectrum.el ends here
