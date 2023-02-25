@@ -28,7 +28,8 @@
 
 (use-package indent
   :custom
-  (indent-tabs-mode nil))
+  (indent-tabs-mode nil)
+  (tab-always-indent 'complete))
 
 (use-package ediff
   :defer t
