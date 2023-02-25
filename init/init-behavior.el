@@ -182,5 +182,8 @@
   :ensure t
   :hook ((prog-mode . editorconfig-mode)))
 
+(use-package recentf
+  :hook ((after-init . recentf-mode)))
+
 (provide 'init-behavior)
 ;;; init-behavior.el ends here
