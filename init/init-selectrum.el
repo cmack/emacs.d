@@ -19,7 +19,7 @@
 (use-package consult
   :ensure t
   :after (vertico project)
-  :bind  (("C-h a" . consult-apropos)
+  :bind  (("C-h a" . describe-symbol)
           ("C-s" . consult-line)
           ("C-x b" . consult-buffer)
           ("C-x 4 b" . consult-buffer-other-window)
