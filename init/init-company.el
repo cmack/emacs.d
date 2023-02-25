@@ -17,4 +17,9 @@
         company-tooltip-align-annotations t
         company-selection-wrap-around t))
 
+(use-package company-lsp
+  :after (lsp-mode company)
+  :config
+  (cl-pushnew 'company-lsp company-backends))
+
 (provide 'init-company)
