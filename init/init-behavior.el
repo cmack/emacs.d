@@ -149,10 +149,13 @@
 
 (use-package dumb-jump
   :ensure t
-  :hook
-  (xref-backend-functions . dumb-jump-xref-activate)
-  :config
-  (setq dumb-jump-prefer-searcher 'rg))
+  :defer t
+  :init
+  ;; :hook doesn't work for this one since it doesn't use -hook suffix
+  (add-hook 'xref-backend-functions #'dumb-jump-xref-activate 99 nil)
+  :custom
+  (dumb-jump-prefer-searcher 'rg)
+  (dumb-jump-selector 'completing-read))
 
 (use-package lsp-mode
   :ensure t
