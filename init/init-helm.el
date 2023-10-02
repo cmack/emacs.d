@@ -4,6 +4,7 @@
 
 (use-package helm-rg
   :ensure t
+  :after helm
   :commands helm-mode)
 
 (use-package helm-config

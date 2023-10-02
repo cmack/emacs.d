@@ -22,7 +22,7 @@
                  slime-fancy
                  slime-asdf
                  slime-banner
-                 helm-slime
+                 ;; helm-slime
                  slime-company))
 
   ;; (define-key slime-repl-mode-map (kbd "C-c ;") 'slime-insert-balanced-comments)
@@ -46,6 +46,7 @@
   (setq slime-company-completion 'fuzzy))
 
 (use-package helm-slime
+  :disabled t
   :ensure t
   :after (helm slime))
 
