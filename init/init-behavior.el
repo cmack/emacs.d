@@ -129,6 +129,7 @@
   :commands which-key-mode)
 
 (use-package ispell
+  :defer t
   :config
   (let ((executable (executable-find "hunspell")))
     (when executable
