@@ -16,7 +16,7 @@
 (use-package planet-theme
   :ensure t
   :if (and window-system (>= emacs-major-version 24))
-  :config
+  :init
   (load-theme 'planet t))
 
 (provide 'init-appearence)

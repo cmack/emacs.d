@@ -55,6 +55,7 @@
 
 (use-package orderless
   :ensure t
+  :after vertico
   :custom
   (completion-styles (list 'orderless 'flex)))
 

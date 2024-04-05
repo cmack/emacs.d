@@ -1,22 +1,34 @@
-(setq-default fill-column 78)
-(auto-fill-mode 1)
-(column-number-mode t)
+(use-package emacs
+  :hook (emacs-startup . turn-on-auto-fill)
+  :custom
+  (fill-column 78)
+  (use-short-answers t)
 
-(setq backup-by-copying t
-      delete-old-versions t
-      kept-new-versions 6
-      kept-old-versions 2
-      version-control t)
+  (column-number-mode t)
 
-(setq backup-directory-alist `(("." . ,(locate-user-emacs-file "backups"))))
+  (backup-by-copying t)
+  (delete-old-versions t)
+  (kept-new-versions 6)
+  (kept-old-versions 2)
+  (version-control t)
+  (backup-directory-alist `(("." . ,(locate-user-emacs-file "backups"))))
 
-(setq auto-save-file-name-transforms `((".*" ,(locate-user-emacs-file  "autosaves") t)))
-;; (setq auto-save-file-name-transforms
-;;       '(("\\`/?\\([^/]*/\\)*\\([^/]*\\)\\'"  "~/.emacs.d/autosaves/\\2" t)))
+  (auto-save-file-name-transforms `((".*" ,(locate-user-emacs-file  "autosaves") t)))
+  ;; (add-to-list 'custom-theme-load-path (locate-user-emacs-file "themes"))
+  (custom-theme-directory (locate-user-emacs-file "themes"))
+  (custom-file (locate-user-emacs-file "custom.el"))
 
-;; (add-to-list 'custom-theme-load-path (locate-user-emacs-file "themes"))
-(setq-default custom-theme-directory (locate-user-emacs-file "themes"))
-(setq-default indent-tabs-mode nil)
+  (when (>= emacs-major-version 24)
+    ;; (electric-pair-mode t)
+    (electric-indent-mode t)
+    (electric-layout-mode t))
+
+  :config
+  (setq-default buffer-file-coding-system 'utf-8))
+
+(use-package indent
+  :custom
+  (indent-tabs-mode nil))
 
 (use-package ediff
   :defer t
@@ -25,26 +37,28 @@
   (setq ediff-split-window-function 'split-window-horizontally
         ediff-window-setup-function 'ediff-setup-windows-plain))
 
-(setq indent-tabs-mode nil)
 
-(fset 'yes-or-no-p 'y-or-n-p)
-
-;; TODO have graceful browser fallbacks
-(when window-system
-  (when-let ((path (and *linux-p*
-                        (executable-find "xdg-open"))))
-    (setq browse-url-generic-program path))
-  (setq browse-url-browser-function
-        (cond (*linux-p* 'browse-url-generic)
-              (*mac-p* 'browse-url-default-macosx-browser)
-              (*windows-p* 'browse-url-default-windows-browser))))
+;; (use-package browse-url
+;;   :custom
+;;   (browse-url-generic-program (and window-system *linux-p*
+;;                                    (executeable-find "xdg-open")))
+;;   (browse-url-browser-function ))
+;; ;; TODO have graceful browser fallbacks
+;; (when window-system
+;;   (when-let ((path (and *linux-p*
+;;                         (executable-find "xdg-open"))))
+;;     (setq browse-url-generic-program path))
+;;   (setq browse-url-browser-function
+;;         (cond (*linux-p* 'browse-url-generic)
+;;               (*mac-p* 'browse-url-default-macosx-browser)
+;;               (*windows-p* 'browse-url-default-windows-browser))))
 
 ;; UTF-8
 (set-keyboard-coding-system 'utf-8)
 (set-terminal-coding-system 'utf-8)
 (prefer-coding-system       'utf-8)
 (set-default-coding-systems 'utf-8)
-(setq-default buffer-file-coding-system 'utf-8)
+
 
 (use-package mwheel
   :custom
@@ -56,17 +70,10 @@
   ;; Scroll less line per wheel move event
   (mouse-wheel-scroll-amount '(2 ((shift) . hscroll) ((control)))))
 
-(when (>= emacs-major-version 24)
-  ;; (electric-pair-mode t)
-  (electric-indent-mode t)
-  (electric-layout-mode t))
-
 (use-package uniquify
   :ensure nil
   :config
   (setq uniquify-buffer-name-style 'post-forward-angle-brackets))
-
-(setq custom-file (locate-user-emacs-file "custom.el"))
 
 (defun tabify-buffer ()
   "TABIFY the whole buffer."

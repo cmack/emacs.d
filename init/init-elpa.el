@@ -15,7 +15,24 @@
 
 (eval-when-compile
   (require 'use-package))
+
 (require 'bind-key)
+
+(use-package use-package
+  :custom
+  ;(use-package-compute-statistics t)
+  (use-package-always-defer t))
+
+(use-package comp
+  :defer t
+  :custom
+  (native-comp-always-compile t))
+
+(use-package package
+  :defer t
+  :custom
+  (package-native-compile t))
+
 (use-package diminish :ensure t)
 
 (use-package exec-path-from-shell
