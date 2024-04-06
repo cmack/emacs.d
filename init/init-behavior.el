@@ -98,15 +98,20 @@
 
 (add-hook 'after-init-hook #'cmack/after-init-hook)
 
-;;; Show trailing whitespace exceptions
-(dolist (hook '(eww-mode-hook minibuffer-setup-hook buffer-menu-mode-hook))
-  (add-hook hook (lambda ()
-                   (setq-local show-trailing-whitespace nil))))
+(defun cmack/show-trailing-whitespace-off ()
+  (setq-local show-trailing-whitespace nil))
+
+(use-package whitespace
+  :custom
+  (show-trailing-whitespace t)
+  :hook
+  ;; Show trailing whitespace exceptions
+  ((eww-mode . cmack/show-trailing-whitespace-off)
+   (minibuffer-setup . cmack/show-trailing-whitespace-off)
+   (buffer-menu-mode . cmack/show-trailing-whitespace-off)))
 
 (use-package prog-mode
   :commands prog-mode
-  :custom
-  (show-trailing-whitespace t)
   :hook ((before-save . whitespace-cleanup)
          (prog-mode . subword-mode)
          (prog-mode . flyspell-prog-mode)
