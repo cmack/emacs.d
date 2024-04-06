@@ -37,15 +37,15 @@
   :after org)
 
 (use-package org-roam
+  :ensure t
   :custom
   (org-roam-directory "~/Documents/org-files/")
   (org-roam-completion-everywhere t)
+
   :bind (("C-c n l" . org-roam)
          ("C-c n f" . org-roam-node-find)
          ("C-c n g" . org-roam-show-graph)
-         ("C-c n i" . org-roam-node-insert))
-  :config
-  (org-roam-setup))
+         ("C-c n i" . org-roam-node-insert)))
 
 (provide 'init-org)
 ;;; init-org.el ends here
