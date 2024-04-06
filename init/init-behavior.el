@@ -39,11 +39,12 @@
         ediff-window-setup-function 'ediff-setup-windows-plain))
 
 
-;; (use-package browse-url
-;;   :custom
-;;   (browse-url-generic-program (and window-system *linux-p*
-;;                                    (executeable-find "xdg-open")))
-;;   (browse-url-browser-function ))
+(use-package browse-url
+  :custom
+  (browse-url-generic-program (and window-system *linux-p*
+                                   (executeable-find "xdg-open")))
+  (browse-url-handlers '(("hyperspec" . eww-browse-url))))
+
 ;; ;; TODO have graceful browser fallbacks
 ;; (when window-system
 ;;   (when-let ((path (and *linux-p*
