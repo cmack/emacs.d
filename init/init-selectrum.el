@@ -16,6 +16,12 @@
   :config
   (prescient-persist-mode 1))
 
+(use-package vertico-prescient
+  :ensure t
+  :after (vertico prescient)
+  :config
+  (vertico-prescient-mode 1))
+
 (use-package consult
   :ensure t
   :after (vertico project)
