@@ -11,6 +11,7 @@
 
 (use-package projectile
   :ensure t
+  :disabled t
   :commands projectile-mode
   :hook (after-init . projectile-mode)
   :bind-keymap ("C-c p" . projectile-command-map))
