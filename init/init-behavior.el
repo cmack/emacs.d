@@ -174,9 +174,13 @@
   :ensure t
   :commands (lsp lsp-deferred)
   ;; :disabled nil
-  :config
-  (setq lsp-file-watch-threshold 200000)
-  (setq lsp-enable-file-watchers nil)
+  :custom
+  ;; I needed these for a large Laravel+legacy app work
+
+  ;; TODO: revisit necessity and scope. e.g. better to define a project scope
+  ;; with dir-locals
+  (lsp-file-watch-threshold 200000)
+  (lsp-enable-file-watchers nil)
 
   ;; (setq lsp-response-timeout 2
   ;;       lsp-enable-eldoc t
