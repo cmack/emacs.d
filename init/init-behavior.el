@@ -23,10 +23,19 @@
     (electric-indent-mode t)
     (electric-layout-mode t))
 
+  :bind (("M-SPC" . cycle-spacing)
+         ;; Prevent accidental sleeping
+         ("C-z" . nil)
+         ("C-x C-z" . nil))
   :config
-  (setq-default buffer-file-coding-system 'utf-8))
+  (setq-default buffer-file-coding-system 'utf-8)
+  (which-key-mode 1))
 
 (use-package indent
+  :bind
+  ;; Handle JIS keyboard esp. on macOS
+  (("C-M-¥" . indent-region))
+
   :custom
   (indent-tabs-mode nil)
   (tab-always-indent 'complete))
@@ -86,19 +95,6 @@
   "UNTABIFY the whole buffer."
   (interactive)
   (untabify (point-min) (point-max)))
-
-(defun cmack/after-init-hook ()
-  "My custom hook for after init."
-  (bind-key "M-SPC" #'cycle-spacing)
-
-  ;; Handle JIS keyboard
-  (bind-key "C-M-¥" #'indent-region)
-  (which-key-mode 1)
-  ;; prevent accidental sleeping
-  (global-unset-key (kbd "C-z"))
-  (global-unset-key (kbd "C-x C-z")))
-
-(add-hook 'after-init-hook #'cmack/after-init-hook)
 
 (defun cmack/show-trailing-whitespace-off ()
   (setq-local show-trailing-whitespace nil))
