@@ -96,17 +96,19 @@
   (interactive)
   (untabify (point-min) (point-max)))
 
-(defun cmack/show-trailing-whitespace-off ()
-  (setq-local show-trailing-whitespace nil))
-
 (use-package whitespace
   :custom
   (show-trailing-whitespace t)
+  :preface
+  (defun cmack/show-trailing-whitespace-off ()
+    "Turns off display of trailing whitespace."
+    (setq-local show-trailing-whitespace nil))
   :hook
   ;; Show trailing whitespace exceptions
   ((eww-mode . cmack/show-trailing-whitespace-off)
    (minibuffer-setup . cmack/show-trailing-whitespace-off)
-   (buffer-menu-mode . cmack/show-trailing-whitespace-off)))
+   (buffer-menu-mode . cmack/show-trailing-whitespace-off)
+   (mastodon-mode . cmack/show-trailing-whitespace-off)))
 
 (use-package prog-mode
   :commands prog-mode
