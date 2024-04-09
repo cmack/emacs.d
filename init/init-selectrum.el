@@ -24,16 +24,16 @@
 
 (use-package consult
   :ensure t
-  :after (vertico project)
-  :bind  (("C-h a" . describe-symbol)
-          ("C-s" . consult-line)
-          ("C-x b" . consult-buffer)
-          ("C-x 4 b" . consult-buffer-other-window)
-          ("C-x 5 b" . consult-buffer-other-frame)
-          ("M-g g" . consult-goto-line)
-          ("M-g M-g" . consult-goto-line)
-          ("M-s-r" . consult-ripgrep)
-          ("M-y" . consult-yank-pop)))
+  :after (vertico)
+  :bind (("C-h a" . describe-symbol)
+         ("C-s" . consult-line)
+         ("C-x b" . consult-buffer)
+         ("C-x 4 b" . consult-buffer-other-window)
+         ("C-x 5 b" . consult-buffer-other-frame)
+         ("M-g g" . consult-goto-line)
+         ("M-g M-g" . consult-goto-line)
+         ("M-s-r" . consult-ripgrep)
+         ("M-y" . consult-yank-pop)))
 
 (use-package consult-flycheck
   :ensure t
