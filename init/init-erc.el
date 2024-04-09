@@ -11,4 +11,11 @@
   (erc-track-exclude-types '("JOIN" "NICK" "PART" "QUIT" "MODE" "333" "353" "324" "329" "332" "477"))
   (erc-hide-list '("JOIN" "NICK" "PART" "QUIT")))
 
+(use-package mastodon
+  :ensure t
+  :commands (mastodon)
+  :custom
+  (mastodon-active-user "charliemac")
+  (mastodon-instance-url "https://mastodon.social"))
+
 (provide 'init-erc)
