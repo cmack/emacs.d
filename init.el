@@ -59,4 +59,6 @@
 (require 'init-terraform)
 (require 'init-csv)
 
+(require 'init-news)
+
 (load custom-file)
