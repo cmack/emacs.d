@@ -2,6 +2,9 @@
   :ensure nil
   :bind ("C-x W" . newsticker-show-news)
   :custom
+  (newsticker-date-format "(%A, %F %T)")
+  ;; TODO: item list title button widths are hard-coded upstream.
+  (newsticker-treeview-date-format "%F, %R ")
   (newsticker-url-list
    '(("Planet Emacslife" "https://planet.emacslife.com/atom.xml")
      ("Mastering Emacs" "http://www.masteringemacs.org/feed/")
