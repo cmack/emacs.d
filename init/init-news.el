@@ -17,6 +17,7 @@
      ("Matthew Ström" "https://matthewstrom.com/feed.xml")
      ("Wingolog" "https://wingolog.org/feed/atom")
      ("Futurile" "https://www.futurile.net/feeds/all.atom.xml")
-     ("David Thompson" "https://dthompson.us/feed.xml"))))
+     ("David Thompson" "https://dthompson.us/feed.xml")
+     ("Graphics Programming Weekly" "https://jendrikillner.com/tags/weekly/index.xml"))))
 
 (provide 'init-news)
