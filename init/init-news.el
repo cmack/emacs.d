@@ -18,3 +18,5 @@
      ("Wingolog" "https://wingolog.org/feed/atom")
      ("Futurile" "https://www.futurile.net/feeds/all.atom.xml")
      ("David Thompson" "https://dthompson.us/feed.xml"))))
+
+(provide 'init-news)
