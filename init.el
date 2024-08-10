@@ -49,6 +49,7 @@
 (require 'init-python)
 (require 'init-php)
 (require 'init-ruby)
+(require 'init-julia)
 (require 'init-erc)
 (require 'init-web)
 
