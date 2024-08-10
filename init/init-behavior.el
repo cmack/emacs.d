@@ -205,5 +205,9 @@
 (use-package recentf
   :hook ((after-init . recentf-mode)))
 
+(use-package eat
+  :ensure t
+  :defer t)
+
 (provide 'init-behavior)
 ;;; init-behavior.el ends here
