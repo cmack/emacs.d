@@ -6,7 +6,8 @@
   ;; TODO: item list title button widths are hard-coded upstream.
   (newsticker-treeview-date-format "%F, %R ")
   (newsticker-url-list
-   '(("Planet Emacslife" "https://planet.emacslife.com/atom.xml")
+   '(("Emacs News" "https://sachachua.com/blog/feed/")
+     ("Planet Emacslife" "https://planet.emacslife.com/atom.xml")
      ("Mastering Emacs" "http://www.masteringemacs.org/feed/")
      ("Oremacs" "https://oremacs.com/atom.xml")
      ("EmacsCast" "https://pinecast.com/feed/emacscast")
@@ -18,6 +19,8 @@
      ("Wingolog" "https://wingolog.org/feed/atom")
      ("Futurile" "https://www.futurile.net/feeds/all.atom.xml")
      ("David Thompson" "https://dthompson.us/feed.xml")
-     ("Graphics Programming Weekly" "https://jendrikillner.com/tags/weekly/index.xml"))))
+     ("Graphics Programming Weekly" "https://jendrikillner.com/tags/weekly/index.xml")
+     ("McCLIM upstream" "https://codeberg.org/McCLIM/McCLIM.rss"))))
 
 (provide 'init-news)
+;;; init-news.el ends here
