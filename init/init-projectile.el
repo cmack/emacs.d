@@ -3,14 +3,15 @@
 (use-package ripgrep :ensure t :defer t)
 
 (use-package helm-projectile
-  :ensure t
+  :ensure nil
+  :disabled t
   :after (projectile helm)
   :config
   (setq projectile-completion-system 'helm)
   (helm-projectile-on))
 
 (use-package projectile
-  :ensure t
+  :ensure nil
   :disabled t
   :commands projectile-mode
   :hook (after-init . projectile-mode)
