@@ -22,8 +22,4 @@
   :config
   (flycheck-clojure-setup))
 
-(use-package clojurescript-mode
-  :ensure t
-  :commands clojurescript-mode)
-
 (provide 'init-clojure)
