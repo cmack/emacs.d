@@ -43,7 +43,9 @@
 
 (use-package rainbow-mode
   :ensure t
-  :commands rainbow-mode)
+  :commands rainbow-mode
+  :custom
+  (rainbow-html-colors-major-mode-list '(html-mode css-mode php-mode nxml-mode xml-mode lisp-mode)))
 
 (when (< emacs-major-version 24)
   (use-package org :ensure t))
