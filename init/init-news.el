@@ -26,5 +26,11 @@
      ("Use the Index Luke" "https://use-the-index-luke.com/blog/feed")
      ("Dave Pearson" "https://blog.davep.org/feeds/all.atom.xml"))))
 
+(use-package gnus
+  :ensure nil
+  :after emacs-startup
+  :custom
+  (gnus-select-method '(nntp "news.gmane.io")))
+
 (provide 'init-news)
 ;;; init-news.el ends here
