@@ -190,10 +190,11 @@
 
 (use-package lsp-ui
   :ensure t
+  :after lsp-mode
   :commands lsp-ui-mode
-  ;; :hook (lsp-mode . lsp-ui-mode)
-  :bind (("M-." . lsp-ui-peek-find-definitions)
-         ("M-?" . lsp-ui-peek-find-references))
+  :bind (:map lsp-ui-mode-map
+              ([remap xref-find-definitions] . lsp-ui-peek-find-definitions)
+              ([remap xref-find-references] . lsp-ui-peek-find-references))
   :config
   ;;  (setq lsp-ui-flycheck-enable t)
   )
