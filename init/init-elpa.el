@@ -1,13 +1,6 @@
 ;;; init-elpa --- Elpa customizations   -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
-;;------------------------------------------------------------------------------
-;; Standard package repositories
-;;------------------------------------------------------------------------------
-(add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/") t)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-;; (add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/") t)
-(add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/") t)
 
 ;;------------------------------------------------------------------------------
 ;; Fire up package.el and ensure the following packages are installed.
@@ -20,8 +13,12 @@
 
 (use-package use-package
   :custom
-  ;(use-package-compute-statistics t)
-  (use-package-always-defer t))
+  ;; (use-package-compute-statistics t)
+  (use-package-always-defer t)
+  (package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
+                      ("nongnu" . "https://elpa.nongnu.org/nongnu/")
+                      ("melpa" . "https://melpa.org/packages/")
+                      ("org" . "https://orgmode.org/elpa/"))) )
 
 (use-package comp
   :defer t
