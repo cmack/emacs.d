@@ -1,6 +1,17 @@
 (use-package paredit
   :ensure t
-  :hook ((lisp-mode inferior-lisp emacs-lisp-mode) . paredit-mode))
+  :hook
+  ((lisp-mode inferior-lisp-mode emacs-lisp-mode scheme-mode) . paredit-mode))
+
+(use-package prettify-symbols-mode
+  :hook
+  ((lisp-mode inferior-lisp-mode emacs-lisp-mode scheme-mode) . prettify-symbols-mode))
+
+(use-package lisp-mode
+  :after emacs
+  :config
+  (setq-local prettify-symbols-alist
+              '(("lambda" . ?λ))))
 
 (use-package slime
   :ensure t
