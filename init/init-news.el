@@ -20,7 +20,11 @@
      ("Futurile" "https://www.futurile.net/feeds/all.atom.xml")
      ("David Thompson" "https://dthompson.us/feed.xml")
      ("Graphics Programming Weekly" "https://jendrikillner.com/tags/weekly/index.xml")
-     ("McCLIM upstream" "https://codeberg.org/McCLIM/McCLIM.rss"))))
+     ("McCLIM upstream" "https://codeberg.org/McCLIM/McCLIM.rss")
+     ("Jonas Hietala" "https://www.jonashietala.se/feed.xml")
+     ("Mike Blumenkrantz" "https://www.supergoodcode.com/feed.xml")
+     ("Use the Index Luke" "https://use-the-index-luke.com/blog/feed")
+     ("Dave Pearson" "https://blog.davep.org/feeds/all.atom.xml"))))
 
 (provide 'init-news)
 ;;; init-news.el ends here
