@@ -30,7 +30,7 @@
   :custom
   (package-native-compile t))
 
-(use-package diminish :ensure t)
+(use-package diminish :ensure t :after emacs-startup)
 
 (use-package exec-path-from-shell
   :if *mac-p*
