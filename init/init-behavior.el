@@ -161,12 +161,17 @@
   :ensure t
   :bind ("C-c C-u" . string-inflection-all-cycle))
 
+(use-package xref
+  :custom
+  (xref-show-definitions-function #'xref-show-definitions-completing-read)
+  (xref-search-program 'ripgrep))
+
 (use-package dumb-jump
   :ensure t
   :defer t
-  :init
+  :config
   ;; :hook doesn't work for this one since it doesn't use -hook suffix
-  (add-hook 'xref-backend-functions #'dumb-jump-xref-activate 99 nil)
+  (add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
   :custom
   (dumb-jump-prefer-searcher 'rg)
   (dumb-jump-selector 'completing-read))
