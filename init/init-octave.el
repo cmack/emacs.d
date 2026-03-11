@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (use-package octave-mode
   :defer t
   :ensure t

@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (use-package 'powerline
   :ensure t
   :config (powerline-default))

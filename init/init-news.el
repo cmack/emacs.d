@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (use-package newsticker
   :ensure nil
   :bind ("C-x W" . newsticker-show-news)

@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (use-package helm-ag
   :ensure t
   :after helm)

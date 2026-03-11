@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (use-package company
   :ensure t
   :disabled t

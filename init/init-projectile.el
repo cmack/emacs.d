@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (use-package ag :ensure t :defer t)
 
 (use-package ripgrep :ensure t :defer t)

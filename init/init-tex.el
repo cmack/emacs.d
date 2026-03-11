@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (use-package latex
   :ensure auctex
   :commands (latex-mode LaTeX-mode plain-tex-mode))

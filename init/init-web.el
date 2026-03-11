@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (use-package haml-mode :ensure t :defer t)
 
 (use-package restclient :ensure t :defer t)

@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (use-package elpy
   :commands python-mode
   :config

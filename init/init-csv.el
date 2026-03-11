@@ -1,4 +1,4 @@
-;;; init-csv
+;;; init-csv  -*- lexical-binding: t; -*-
 ;;; Code:
 (defun cmack/csv-mode-hook ()
   "My custom csv mode hook.

@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (use-package sqlup-mode
   :ensure t
   :commands sqlup-mode

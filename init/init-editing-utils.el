@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (use-package multiple-cursors
   :ensure t
   :bind (("C-<" . mc/mark-previous-like-this)

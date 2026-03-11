@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (use-package emacs
   :hook (emacs-startup . turn-on-auto-fill)
   :custom
