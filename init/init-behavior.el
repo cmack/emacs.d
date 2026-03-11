@@ -216,5 +216,17 @@
   :ensure t
   :defer t)
 
+(use-package time
+  :custom
+  (zoneinfo-style-world-list
+   '(("America/Los_Angeles" "Seattle")
+     ("America/New_York" "New York")
+     ("Europe/London" "London")
+     ("Europe/Paris" "Paris")
+     ("Europe/Warsaw" "Warsaw, Poland")
+     ("Asia/Kolkata" "Delhi")
+     ("Asia/Tokyo" "Tokyo")
+     ("UTC" "UTC"))))
+
 (provide 'init-behavior)
 ;;; init-behavior.el ends here
