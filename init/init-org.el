@@ -9,7 +9,9 @@
                                "~/Dropbox/org/home.org"))
   (defun cmack/org-mode-hook ()
     (add-hook 'completion-at-point-functions 'pcomplete-completions-at-point nil t)
-    (push '(company-capf :with company-yasnippet) company-backends))
+    (when (featurep 'company)
+      (company-mode 1)
+      (push '(company-capf :with company-yasnippet) company-backends)))
 
   :bind
   ("C-c a" . org-agenda)
